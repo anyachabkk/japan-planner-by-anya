@@ -138,6 +138,7 @@
     .arrow { color: #8a7a9e; font-size: 20px; line-height: 1; }
     footer { padding: 27px 8px 0; color: #8a8391; text-align: center; font-size: 10px; line-height: 1.8; }
     footer strong { display: block; color: var(--purple-dark); font-size: 10px; letter-spacing: .12em; }
+    footer .remark { display: block; margin-top: 9px; color: #9a919f; font-size: 10px; line-height: 1.7; }
     @media (max-width: 420px) {
       body { padding-right: 15px; padding-left: 15px; }
       .topbar { min-height: 58px; }
@@ -182,7 +183,7 @@
         </a>
       </nav>
     </section>
-    <footer><strong>JAPAN PLANNER BY ANYA</strong><span data-i18n="footer">วางแผนทริปได้ง่ายขึ้นในที่เดียว</span></footer>
+    <footer><strong>JAPAN PLANNER BY ANYA</strong><span data-i18n="footer">วางแผนทริปได้ง่ายขึ้นในที่เดียว</span><span class="remark" data-i18n="remark">เว็บไซต์นี้จะถูกลบและเข้าถึงไม่ได้หลังทริปจบ<br>หากต้องการเอกสาร กรุณาติดต่ออันย่าได้ทุกช่องทาง</span></footer>
   </main>
   <script>
     const languageText = {
@@ -192,7 +193,7 @@
         documentsLabel: 'เอกสารทริปนี้', restaurantTitle: 'รายการร้านอาหาร',
         restaurantDetail: 'รวม 7 ร้าน · แบ่งตามวันเดินทาง', notesTitle: 'Trick & Information',
         notesDetail: '10 ข้อควรรู้เรื่องการสั่งอาหารและมารยาทในร้านญี่ปุ่น', downloadTitle: 'Google Drive',
-        downloadDetail: 'สำหรับดาวน์โหลดเอกสารเก็บไว้ หากลูกค้าต้องการ', footer: 'วางแผนทริปได้ง่ายขึ้นในที่เดียว'
+        downloadDetail: 'สำหรับดาวน์โหลดเอกสารเก็บไว้ หากลูกค้าต้องการ', footer: 'วางแผนทริปได้ง่ายขึ้นในที่เดียว', remark: 'เว็บไซต์นี้จะถูกลบและเข้าถึงไม่ได้หลังทริปจบ<br>หากต้องการเอกสาร กรุณาติดต่ออันย่าได้ทุกช่องทาง'
       },
       ja: {
         languageLabel: '言語を選択', eyebrow: 'YOUR TOKYO JOURNEY',
@@ -200,7 +201,7 @@
         documentsLabel: '旅行の資料', restaurantTitle: 'レストラン案内',
         restaurantDetail: '7軒 · 日程別に掲載', notesTitle: '食事のヒント＆日本の飲食店情報',
         notesDetail: '注文方法とお店でのマナー 10選', downloadTitle: 'Google Drive',
-        downloadDetail: '必要な場合は、資料を保存・ダウンロードできます', footer: '旅行の準備を、ひとつの場所で。'
+        downloadDetail: '必要な場合は、資料を保存・ダウンロードできます', footer: '旅行の準備を、ひとつの場所で。', remark: 'このウェブサイトは旅行終了後に削除され、アクセスできなくなります。<br>資料が必要な場合は、いつでもアニャまでご連絡ください。'
       }
     };
     function setLanguage(language) {

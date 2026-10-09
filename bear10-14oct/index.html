@@ -163,7 +163,7 @@
       <p class="date-line" data-i18n="dateLine">10–14 ตุลาคม 2026 · โตเกียว</p>
       <p class="intro" data-i18n="intro">รวมเอกสารสำคัญสำหรับทริปนี้<br>เลือกเปิดหัวข้อที่ต้องการได้เลย</p>
     </section>
-    <section aria-labelledby="documents-title">
+    <section aria-label="เอกสารทริป" data-i18n-aria="documentsLabel">
       <nav class="links" aria-label="เอกสารทริป" data-i18n-aria="documentsLabel">
         <a class="link-card" href="restaurant/index.html">
           <span class="link-icon" aria-hidden="true">🍣</span>
@@ -173,6 +173,11 @@
         <a class="link-card" href="tricks/index.html">
           <span class="link-icon" aria-hidden="true">📝</span>
           <span class="link-text"><span class="link-title" data-i18n="notesTitle">Trick &amp; Information</span><span class="link-detail" data-i18n="notesDetail">10 ข้อควรรู้เรื่องการสั่งอาหารและมารยาทในร้านญี่ปุ่น</span></span>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="link-card" href="https://drive.google.com/drive/folders/1QcAoA7Yp6FG-sno5cIM4A73KjdU4VvbF?usp=sharing" target="_blank" rel="noopener noreferrer">
+          <span class="link-icon" aria-hidden="true">📥</span>
+          <span class="link-text"><span class="link-title" data-i18n="downloadTitle">ดาวน์โหลดเอกสาร</span><span class="link-detail" data-i18n="downloadDetail">สำหรับดาวน์โหลดเอกสารเก็บไว้ หากลูกค้าต้องการ</span></span>
           <span class="arrow" aria-hidden="true">↗</span>
         </a>
       </nav>
@@ -186,14 +191,16 @@
         dateLine: '10–14 ตุลาคม 2026 · โตเกียว', intro: 'รวมเอกสารสำคัญสำหรับทริปนี้<br>เลือกเปิดหัวข้อที่ต้องการได้เลย',
         documentsLabel: 'เอกสารทริปนี้', restaurantTitle: 'รายการร้านอาหาร',
         restaurantDetail: 'รวม 7 ร้าน · แบ่งตามวันเดินทาง', notesTitle: 'Trick & Information',
-        notesDetail: '10 ข้อควรรู้เรื่องการสั่งอาหารและมารยาทในร้านญี่ปุ่น', footer: 'วางแผนทริปได้ง่ายขึ้นในที่เดียว'
+        notesDetail: '10 ข้อควรรู้เรื่องการสั่งอาหารและมารยาทในร้านญี่ปุ่น', downloadTitle: 'ดาวน์โหลดเอกสาร',
+        downloadDetail: 'สำหรับดาวน์โหลดเอกสารเก็บไว้ หากลูกค้าต้องการ', footer: 'วางแผนทริปได้ง่ายขึ้นในที่เดียว'
       },
       ja: {
         languageLabel: '言語を選択', eyebrow: 'YOUR TOKYO JOURNEY',
         dateLine: '2026年10月10日〜14日 · 東京', intro: 'この旅行に必要な資料をまとめました。<br>見たい項目を選んでください。',
         documentsLabel: '旅行の資料', restaurantTitle: 'レストラン案内',
         restaurantDetail: '7軒 · 日程別に掲載', notesTitle: '食事のヒント＆日本の飲食店情報',
-        notesDetail: '注文方法とお店でのマナー 10選', footer: '旅行の準備を、ひとつの場所で。'
+        notesDetail: '注文方法とお店でのマナー 10選', downloadTitle: '資料をダウンロード',
+        downloadDetail: '必要な場合は、資料を保存・ダウンロードできます', footer: '旅行の準備を、ひとつの場所で。'
       }
     };
     function setLanguage(language) {

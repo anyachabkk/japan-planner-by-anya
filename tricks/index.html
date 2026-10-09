@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f5fa">
+  <meta name="description" content="ทริกและข้อมูลสำหรับสั่งอาหารในญี่ปุ่น | Japan Planner by Anya">
+  <title>Trick &amp; Information | Japan Planner by Anya</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #332c40;
+      --muted: #777184;
+      --paper: #f7f5fa;
+      --card: #fffefe;
+      --line: #e6dfed;
+      --purple-ink: #51466b;
+      --purple-soft: #f2eff8;
+      --lavender: #cbc3e3;
+      --lavender-mid: #bdb5d5;
+      --mauve-soft: #f5eef6;
+      --purple-accent: #75628f;
+      --gold: #f2c500;
+      --shadow: 0 12px 32px rgba(65,52,83,.06);
+    }
+    * { box-sizing: border-box; }
+    body { min-height: 100vh; margin: 0; color: var(--ink); background: var(--paper); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans Thai", sans-serif; -webkit-font-smoothing: antialiased; }
+    .shell { max-width: 900px; margin: 0 auto; padding: 0 20px 52px; }
+    .topbar { min-height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 0 4px; border-bottom: 1px solid rgba(189,181,213,.38); }
+    .brand { color: var(--purple-ink); font-size: 11px; font-weight: 750; letter-spacing: .12em; text-decoration: none; white-space: nowrap; }
+    .brand span { font-weight: 450; }
+    .language-switch { display: flex; gap: 3px; padding: 3px; border: 1px solid var(--lavender-mid); border-radius: 999px; background: var(--card); }
+    .language-switch button { min-width: 43px; border: 0; border-radius: 999px; padding: 6px 9px; color: var(--muted); background: transparent; font: inherit; font-size: 10px; cursor: pointer; }
+    .language-switch button[aria-pressed="true"] { color: var(--purple-ink); background: var(--lavender); }
+    .language-switch button:focus-visible, a:focus-visible { outline: 2px solid var(--purple-accent); outline-offset: 3px; }
+    .hero { margin: 20px 0 22px; padding: 25px 25px 23px; border: 1px solid rgba(189,181,213,.62); border-radius: 16px; background: linear-gradient(125deg, rgba(203,195,227,.42), rgba(216,191,216,.3)); }
+    .back-link { display: inline-flex; align-items: center; gap: 7px; margin-bottom: 17px; padding: 8px 12px; border: 1px solid var(--lavender-mid); border-radius: 999px; color: var(--purple-ink); background: rgba(255,254,254,.85); font-size: 11px; font-weight: 680; text-decoration: none; transition: .18s ease; }
+    .back-link:hover { border-color: var(--purple-accent); background: var(--mauve-soft); }
+    .eyebrow { display: flex; align-items: center; gap: 8px; color: var(--purple-accent); font-size: 10px; font-weight: 750; letter-spacing: .13em; text-transform: uppercase; }
+    .eyebrow::before { width: 18px; height: 1px; background: currentColor; content: ""; }
+    h1 { margin: 10px 0 7px; font-family: Georgia, "Noto Serif Thai", serif; font-size: clamp(28px, 5vw, 40px); font-weight: 500; letter-spacing: -.035em; line-height: 1.25; }
+    .hero-copy { max-width: 630px; margin: 0; color: #686274; font-size: 13px; line-height: 1.8; }
+    .section-title { margin: 24px 3px 11px; color: var(--purple-ink); font-size: 12px; font-weight: 750; letter-spacing: .04em; }
+    .tips { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 11px; }
+    .tip { display: flex; min-width: 0; gap: 12px; padding: 15px 15px 16px; border: 1px solid var(--line); border-radius: 12px; background: var(--card); box-shadow: var(--shadow); }
+    .tip-number { display: grid; width: 31px; height: 31px; flex: 0 0 31px; place-items: center; border-radius: 9px; color: var(--purple-ink); background: var(--lavender); font-size: 12px; font-weight: 800; }
+    .tip h3 { margin: 1px 0 5px; font-size: 13px; font-weight: 750; line-height: 1.5; }
+    .tip p { margin: 0; color: #5f5968; font-size: 12px; line-height: 1.8; }
+    .phrase { display: inline-block; margin: 2px 2px 1px 0; padding: 2px 6px; border-radius: 5px; color: var(--purple-ink); background: var(--purple-soft); font-weight: 700; }
+    .tip-note { margin-top: 7px !important; padding-top: 7px; border-top: 1px solid var(--line); color: var(--muted) !important; font-size: 10px !important; }
+    footer { margin-top: 28px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); text-align: center; font-size: 10px; line-height: 1.8; }
+    footer strong { color: var(--purple-ink); letter-spacing: .1em; }
+    @media (max-width: 650px) {
+      .shell { padding: 0 15px 42px; }
+      .topbar { min-height: 58px; }
+      .brand { font-size: 9px; letter-spacing: .09em; }
+      .hero { margin: 14px 0 19px; padding: 20px 17px; }
+      .tips { grid-template-columns: 1fr; gap: 9px; }
+    }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition-duration: .01ms !important; } }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <a class="brand" href="../" aria-label="Japan Planner by Anya">JAPAN PLANNER <span>BY ANYA</span></a>
+      <div class="language-switch" role="group" aria-label="เลือกภาษา" data-i18n-aria="languageLabel">
+        <button type="button" data-language="th" aria-pressed="true">ไทย</button>
+        <button type="button" data-language="ja" aria-pressed="false">日本語</button>
+      </div>
+    </header>
+    <main>
+      <section class="hero" aria-labelledby="page-title">
+        <a class="back-link" href="../"><span aria-hidden="true">←</span><span data-i18n="backToIndex">กลับหน้า Tokyo itinerary</span></a>
+        <div class="eyebrow" data-i18n="eyebrow">JAPAN DINING GUIDE</div>
+        <h1 id="page-title" data-i18n="pageTitle">Trick &amp; Information 🍽️</h1>
+        <p class="hero-copy" data-i18n="heroCopy">10 ข้อควรรู้สำหรับการสั่งอาหารและใช้บริการร้านอาหารในญี่ปุ่น</p>
+      </section>
+      <section aria-labelledby="ordering-title">
+        <h2 class="section-title" id="ordering-title" data-i18n="orderingTitle">การจอง การสั่งอาหาร และการเรียกพนักงาน</h2>
+        <div class="tips">
+          <article class="tip"><span class="tip-number">01</span><div><h3 data-i18n="tip1Title">แจ้งจำนวนผู้ใหญ่ 2 คน</h3><p data-i18n="tip1">บอกพนักงานว่า <span class="phrase">Ni-mei desu</span> พร้อมชูนิ้ว 2 นิ้ว</p></div></article>
+          <article class="tip"><span class="tip-number">02</span><div><h3 data-i18n="tip2Title">กรณีจองร้านไว้</h3><p data-i18n="tip2">ยื่นใบจองให้พนักงานเมื่อไปถึงร้าน</p></div></article>
+          <article class="tip"><span class="tip-number">03</span><div><h3 data-i18n="tip3Title">เรียกพนักงาน</h3><p data-i18n="tip3">พูดว่า <span class="phrase">Sumimasen</span> หรือยกมือเรียกได้</p></div></article>
+          <article class="tip"><span class="tip-number">04</span><div><h3 data-i18n="tip4Title">สั่งอาหารครบแล้ว</h3><p data-i18n="tip4">บอกพนักงานว่า <span class="phrase">Ijo desu</span> หมายถึง “เท่านี้ค่ะ/ครับ”</p></div></article>
+        </div>
+      </section>
+      <section aria-labelledby="restaurant-title">
+        <h2 class="section-title" id="restaurant-title" data-i18n="restaurantTitle">การคิดเงินและข้อควรรู้ในร้าน</h2>
+        <div class="tips">
+          <article class="tip"><span class="tip-number">05</span><div><h3 data-i18n="tip5Title">ขอเช็กบิล</h3><p data-i18n="tip5">ร้านส่วนใหญ่วางบิลไว้บนโต๊ะ แล้วชำระที่เคาน์เตอร์ หากเป็นร้านกินดื่มหรือร้านที่คิดเงินที่โต๊ะ ให้เรียกพนักงานว่า <span class="phrase">Sumimasen, okaikei desu</span></p><p class="tip-note" data-i18n="tip5Note">ถ้าร้านมีระบบเรียกเก็บเงินผ่านมือถือ ก็ใช้ระบบของร้านได้เลย</p></div></article>
+          <article class="tip"><span class="tip-number">06</span><div><h3 data-i18n="tip6Title">การให้ทิป</h3><p data-i18n="tip6">ร้านอาหารญี่ปุ่นไม่รับทิป จ่ายตามยอดในบิลได้เลย</p></div></article>
+          <article class="tip"><span class="tip-number">07</span><div><h3 data-i18n="tip7Title">น้ำดื่มและเครื่องดื่ม</h3><p data-i18n="tip7">ร้านมักมีน้ำเปล่าบริการฟรีโดยไม่ต้องสั่ง ส่วนในเอกสารแนะนำว่า การสั่งเครื่องดื่มจากเมนูอาจทำให้พนักงานดูแลใกล้ชิดขึ้น</p></div></article>
+          <article class="tip"><span class="tip-number">08</span><div><h3 data-i18n="tip8Title">ค่าใช้จ่ายเพิ่มเติมในร้านกินดื่ม</h3><p data-i18n="tip8">ร้านอิซากายะอาจมีค่าบริการหรือค่าโต๊ะ เช่น ผ้าเย็นและอาหารเรียกน้ำย่อย <span class="phrase">Otoshi</span> ซึ่งเรียกเก็บตามธรรมเนียมของร้าน</p></div></article>
+          <article class="tip"><span class="tip-number">09</span><div><h3 data-i18n="tip9Title">หลีกเลี่ยงช่วงคนเยอะ</h3><p data-i18n="tip9">ถ้าไม่อยากรอคิวนาน ลองเลี่ยงช่วง Peak hour เช่น 18:00–19:00 น.</p></div></article>
+          <article class="tip"><span class="tip-number">10</span><div><h3 data-i18n="tip10Title">อาหารเหลือและการห่อกลับ</h3><p data-i18n="tip10">ร้านอาหารญี่ปุ่นโดยทั่วไปอาจไม่มีบริการห่ออาหารที่ทานไม่หมดกลับบ้าน</p></div></article>
+        </div>
+      </section>
+    </main>
+    <footer><strong>JAPAN PLANNER BY ANYA</strong><br><span data-i18n="footer">กลับไปดูเอกสารทริปอื่น ๆ ได้ที่หน้า Tokyo itinerary</span></footer>
+  </div>
+  <script>
+    const translations = {
+      th: {
+        languageLabel: 'เลือกภาษา', backToIndex: 'กลับหน้า Tokyo itinerary', eyebrow: 'JAPAN DINING GUIDE',
+        pageTitle: 'Trick & Information 🍽️', heroCopy: '10 ข้อควรรู้สำหรับการสั่งอาหารและใช้บริการร้านอาหารในญี่ปุ่น',
+        orderingTitle: 'การจอง การสั่งอาหาร และการเรียกพนักงาน', restaurantTitle: 'การคิดเงินและข้อควรรู้ในร้าน',
+        tip1Title: 'แจ้งจำนวนผู้ใหญ่ 2 คน', tip1: 'บอกพนักงานว่า <span class="phrase">Ni-mei desu</span> พร้อมชูนิ้ว 2 นิ้ว',
+        tip2Title: 'กรณีจองร้านไว้', tip2: 'ยื่นใบจองให้พนักงานเมื่อไปถึงร้าน',
+        tip3Title: 'เรียกพนักงาน', tip3: 'พูดว่า <span class="phrase">Sumimasen</span> หรือยกมือเรียกได้',
+        tip4Title: 'สั่งอาหารครบแล้ว', tip4: 'บอกพนักงานว่า <span class="phrase">Ijo desu</span> หมายถึง “เท่านี้ค่ะ/ครับ”',
+        tip5Title: 'ขอเช็กบิล', tip5: 'ร้านส่วนใหญ่วางบิลไว้บนโต๊ะ แล้วชำระที่เคาน์เตอร์ หากเป็นร้านกินดื่มหรือร้านที่คิดเงินที่โต๊ะ ให้เรียกพนักงานว่า <span class="phrase">Sumimasen, okaikei desu</span>',
+        tip5Note: 'ถ้าร้านมีระบบเรียกเก็บเงินผ่านมือถือ ก็ใช้ระบบของร้านได้เลย',
+        tip6Title: 'การให้ทิป', tip6: 'ร้านอาหารญี่ปุ่นไม่รับทิป จ่ายตามยอดในบิลได้เลย',
+        tip7Title: 'น้ำดื่มและเครื่องดื่ม', tip7: 'ร้านมักมีน้ำเปล่าบริการฟรีโดยไม่ต้องสั่ง ส่วนในเอกสารแนะนำว่า การสั่งเครื่องดื่มจากเมนูอาจทำให้พนักงานดูแลใกล้ชิดขึ้น',
+        tip8Title: 'ค่าใช้จ่ายเพิ่มเติมในร้านกินดื่ม', tip8: 'ร้านอิซากายะอาจมีค่าบริการหรือค่าโต๊ะ เช่น ผ้าเย็นและอาหารเรียกน้ำย่อย <span class="phrase">Otoshi</span> ซึ่งเรียกเก็บตามธรรมเนียมของร้าน',
+        tip9Title: 'หลีกเลี่ยงช่วงคนเยอะ', tip9: 'ถ้าไม่อยากรอคิวนาน ลองเลี่ยงช่วง Peak hour เช่น 18:00–19:00 น.',
+        tip10Title: 'อาหารเหลือและการห่อกลับ', tip10: 'ร้านอาหารญี่ปุ่นโดยทั่วไปอาจไม่มีบริการห่ออาหารที่ทานไม่หมดกลับบ้าน',
+        footer: 'กลับไปดูเอกสารทริปอื่น ๆ ได้ที่หน้า Tokyo itinerary'
+      },
+      ja: {
+        languageLabel: '言語を選択', backToIndex: 'Tokyo itinerary に戻る', eyebrow: 'JAPAN DINING GUIDE',
+        pageTitle: '食事のヒント＆日本の飲食店情報 🍽️', heroCopy: '日本の飲食店で注文・利用するときに知っておきたい10のポイント',
+        orderingTitle: '予約・注文・スタッフの呼び方', restaurantTitle: '会計とお店での注意点',
+        tip1Title: '大人2名と伝える', tip1: 'スタッフに <span class="phrase">二名です (Nimei desu)</span> と伝え、指を2本立てます。',
+        tip2Title: '予約している場合', tip2: 'お店に着いたら、予約票をスタッフに見せてください。',
+        tip3Title: 'スタッフを呼ぶ', tip3: '<span class="phrase">すみません (Sumimasen)</span> と声をかけるか、手を挙げて呼びます。',
+        tip4Title: '注文を終えるとき', tip4: '<span class="phrase">以上です (Ijo desu)</span> と伝えると、「注文は以上です」という意味になります。',
+        tip5Title: 'お会計をお願いする', tip5: '多くのお店では伝票をテーブルに置き、レジで支払います。テーブル会計のお店では <span class="phrase">すみません、お会計お願いします</span> と声をかけます。',
+        tip5Note: 'モバイル注文・会計に対応している場合は、お店のシステムを利用できます。',
+        tip6Title: 'チップについて', tip6: '日本の飲食店ではチップは不要です。伝票の金額を支払えば大丈夫です。',
+        tip7Title: '水とドリンク', tip7: '水は無料で提供されるお店が多いです。資料では、メニューからドリンクを注文すると、スタッフがより気にかけてくれることがあると紹介しています。',
+        tip8Title: '居酒屋の席料など', tip8: '居酒屋では席料やサービス料がかかることがあります。おしぼりや、お通し <span class="phrase">Otoshi</span> が含まれる場合があります。',
+        tip9Title: '混雑する時間を避ける', tip9: '長い列を避けたい場合は、18:00〜19:00などのピーク時間を避けるのがおすすめです。',
+        tip10Title: '食べ残しの持ち帰り', tip10: '日本の飲食店では、食べ残しを持ち帰るための容器を用意していないことがあります。',
+        footer: 'Tokyo itinerary のトップページから他の資料をご覧いただけます。'
+      }
+    };
+    function setLanguage(language) {
+      const messages = translations[language] || translations.th;
+      document.documentElement.lang = language;
+      document.title = language === 'ja' ? '食事のヒント | Japan Planner by Anya' : 'Trick & Information | Japan Planner by Anya';
+      document.querySelectorAll('[data-i18n]').forEach(element => {
+        const value = messages[element.dataset.i18n];
+        if (value !== undefined) element.innerHTML = value;
+      });
+      document.querySelectorAll('[data-i18n-aria]').forEach(element => {
+        element.setAttribute('aria-label', messages[element.dataset.i18nAria]);
+      });
+      document.querySelectorAll('[data-language]').forEach(button => {
+        button.setAttribute('aria-pressed', String(button.dataset.language === language));
+      });
+      try { localStorage.setItem('anya-itinerary-language', language); } catch (_) {}
+    }
+    document.querySelectorAll('[data-language]').forEach(button => {
+      button.addEventListener('click', () => setLanguage(button.dataset.language));
+    });
+    let savedLanguage = 'th';
+    try { savedLanguage = localStorage.getItem('anya-itinerary-language') || 'th'; } catch (_) {}
+    setLanguage(savedLanguage);
+  </script>
+</body>
+</html>

@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#F7F5FA">
-  <meta id="page-description" name="description" content="ร้านอาหารและคำแนะนำที่คัดจากเอกสารทริปญี่ปุ่น โดย Japan Planner by Anya">
-  <title>ร้านอร่อยระหว่างทริป | Japan Planner by Anya</title>
+  <meta id="page-description" name="description" content="รายการร้านอาหารจากแผนเที่ยวโตเกียว โดย Japan Planner by Anya">
+  <title>รายการร้านอาหาร | Japan Planner by Anya</title>
   <style>
     :root {
       color-scheme: light;
@@ -38,6 +38,9 @@
     .language-switch button:focus-visible { outline: 2px solid var(--purple-accent); outline-offset: 2px; }
     [hidden] { display: none !important; }
     .hero { margin: 18px 0 15px; padding: 30px 24px 26px; border: 1px solid rgba(189,181,213,.62); border-radius: 16px; background: linear-gradient(125deg, rgba(203,195,227,.44), rgba(216,191,216,.34)); }
+    .back-link { display: inline-flex; align-items: center; gap: 7px; margin: 0 0 17px; padding: 8px 12px; border: 1px solid var(--lavender-mid); border-radius: 999px; color: var(--purple-ink); background: rgba(255,254,254,.85); text-decoration: none; font-size: 11px; font-weight: 680; transition: .18s ease; }
+    .back-link:hover { border-color: var(--purple-accent); background: var(--mauve-soft); }
+    .back-link:focus-visible { outline: 2px solid var(--purple-accent); outline-offset: 2px; }
     .eyebrow { display: flex; align-items: center; gap: 8px; color: var(--purple-accent); font-size: 11px; font-weight: 750; letter-spacing: .12em; text-transform: uppercase; }
     .eyebrow::before { content: ""; width: 20px; height: 1px; background: currentColor; }
     h1 { margin: 12px 0 9px; font-family: Georgia, "Noto Serif Thai", serif; font-size: clamp(30px, 6vw, 48px); line-height: 1.2; font-weight: 500; letter-spacing: -.035em; }
@@ -138,8 +141,9 @@
     </header>
 
     <section class="hero" aria-labelledby="page-title">
+      <a class="back-link" href="../"><span aria-hidden="true">←</span><span data-i18n="backToIndex">กลับหน้าแรก</span></a>
       <div class="eyebrow" data-i18n="eyebrow">YOUR JAPAN JOURNEY</div>
-      <h1 id="page-title" data-i18n="pageTitle">เอกสารร้านอาหาร 🇯🇵</h1>
+      <h1 id="page-title" data-i18n="pageTitle">รายการร้านอาหาร 🇯🇵</h1>
       <p class="hero-copy" data-i18n="heroCopy">รวมร้านและคำแนะนำเรื่องอาหารจากแผนเที่ยวโตเกียว เปิดดูรายละเอียด คะแนน ราคาโดยประมาณ และเส้นทางได้จากหน้านี้</p>
       <div class="hero-foot"><strong data-i18n="recommendationCount">7 ร้านอาหาร</strong><span class="dot"></span><span data-i18n="dayCount">4 วัน</span><span class="dot"></span><span data-i18n="city">Tokyo</span></div>
     </section>
@@ -150,7 +154,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 4.3 4.3"></path></svg>
           <input id="search" type="search" placeholder="ค้นหาร้านหรือเมนู" aria-label="ค้นหาร้านหรือเมนู" data-i18n-placeholder="searchPlaceholder" data-i18n-aria="searchPlaceholder">
         </label>
-        <nav class="quick-links" aria-label="ไปยังคำแนะนำ" data-i18n-aria="quickLinksLabel">
+        <nav class="quick-links" aria-label="รายการร้านอาหาร" data-i18n-aria="quickLinksLabel">
           <a href="#day-1" data-i18n="navDay1">10 ต.ค.</a><a href="#day-2" data-i18n="navDay2">11 ต.ค.</a><a href="#day-3" data-i18n="navDay3">13 ต.ค.</a><a href="#day-4" data-i18n="navDay4">14 ต.ค.</a>
         </nav>
       </div>
@@ -289,7 +293,7 @@
     }
     const translations = {
       th: {
-        headerNote: 'TOKYO · RESTAURANT GUIDE', eyebrow: 'YOUR JAPAN JOURNEY', pageTitle: 'เอกสารร้านอาหาร 🇯🇵',
+        headerNote: 'TOKYO · RESTAURANT GUIDE', eyebrow: 'YOUR JAPAN JOURNEY', pageTitle: 'รายการร้านอาหาร 🇯🇵', backToIndex: 'กลับหน้าแรก',
         menyaName: 'Menya Shibano', menyaLatin: '麺屋芝乃',
         tsunohazuName: 'Tsunohazu Shokudo', tsunohazuLatin: 'つのはず食堂',
         tachizushiName: 'Tachizushi Yokocho Shinjuku Nishiguchi', tachizushiLatin: '立ち寿司横丁 新宿西口',
@@ -298,7 +302,7 @@
         tinunName: 'Tinun Kitchen Nishi-Shinjuku', tinunLatin: 'ティーヌンキッチン 西新宿店',
         tsumugiName: 'Shinjuku Sushi Tsumugi', tsumugiLatin: '新宿 鮨 つむぎ',
         heroCopy: 'รวมร้านและคำแนะนำเรื่องอาหารจากแผนเที่ยวโตเกียว เปิดดูรายละเอียด คะแนน ราคาโดยประมาณ และเส้นทางได้จากหน้านี้',
-        recommendationCount: '7 ร้านอาหาร', dayCount: '4 วัน', city: 'Tokyo', searchPlaceholder: 'ค้นหาร้านหรือเมนู', quickLinksLabel: 'ไปยังคำแนะนำ',
+        recommendationCount: '7 ร้านอาหาร', dayCount: '4 วัน', city: 'Tokyo', searchPlaceholder: 'ค้นหาร้านหรือเมนู', quickLinksLabel: 'รายการร้านอาหาร',
         navDay1: '10 ต.ค.', navDay2: '11 ต.ค.', navDay3: '13 ต.ค.', navDay4: '14 ต.ค.',
         day1Kicker: 'DAY 01 · SATURDAY', day1Date: '10 October 2026', day1Activity: 'Tokyo sightseeing',
         day2Kicker: 'DAY 02 · SUNDAY', day2Date: '11 October 2026', day2Activity: 'Disney',
@@ -332,7 +336,7 @@
         altTsumugiSushi: '新宿 鮨 つむぎの寿司',
       },
       ja: {
-        headerNote: '東京 · レストランガイド', eyebrow: '日本旅行のレストラン案内', pageTitle: 'レストラン案内 🇯🇵',
+        headerNote: '東京 · レストランガイド', eyebrow: '日本旅行のレストラン案内', pageTitle: 'レストラン一覧 🇯🇵', backToIndex: 'ホームに戻る',
         menyaName: '麺屋芝乃', menyaLatin: 'Menya Shibano',
         tsunohazuName: 'つのはず食堂', tsunohazuLatin: 'Tsunohazu Shokudo',
         tachizushiName: '立ち寿司横丁 新宿西口', tachizushiLatin: 'Tachizushi Yokocho Shinjuku Nishiguchi',
@@ -341,7 +345,7 @@
         tinunName: 'ティーヌンキッチン 西新宿店', tinunLatin: 'Tinun Kitchen Nishi-Shinjuku',
         tsumugiName: '新宿 鮨 つむぎ', tsumugiLatin: 'Shinjuku Sushi Tsumugi',
         heroCopy: '東京旅行中に立ち寄れるレストランをまとめました。各店の詳細、評価、価格帯、地図をご覧いただけます。',
-        recommendationCount: 'おすすめ 7軒', dayCount: '4日間', city: '東京', searchPlaceholder: '店名やメニューを検索', quickLinksLabel: '日付から選ぶ',
+        recommendationCount: 'おすすめ 7軒', dayCount: '4日間', city: '東京', searchPlaceholder: '店名やメニューを検索', quickLinksLabel: 'レストラン一覧',
         navDay1: '10月10日', navDay2: '10月11日', navDay3: '10月13日', navDay4: '10月14日',
         day1Kicker: '1日目 · 土曜日', day1Date: '2026年10月10日', day1Activity: '東京観光',
         day2Kicker: '2日目 · 日曜日', day2Date: '2026年10月11日', day2Activity: 'ディズニー',
@@ -378,7 +382,7 @@
     function setLanguage(language) {
       const messages = translations[language];
       document.documentElement.lang = language;
-      document.title = language === 'ja' ? 'レストラン案内 | Japan Planner by Anya' : 'เอกสารร้านอาหาร | Japan Planner by Anya';
+      document.title = language === 'ja' ? 'レストラン一覧 | Japan Planner by Anya' : 'รายการร้านอาหาร | Japan Planner by Anya';
       document.querySelector('#page-description').content = language === 'ja'
         ? 'Japan Planner by Anyaがおすすめする、東京旅行のレストラン案内です。'
         : 'ร้านอาหารและคำแนะนำที่คัดจากเอกสารทริปญี่ปุ่น โดย Japan Planner by Anya';

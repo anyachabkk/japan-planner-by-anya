@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f2fa">
+  <meta name="description" content="เอกสารทริปโตเกียว | Japan Planner by Anya">
+  <title>Tokyo itinerary 🗼 | Japan Planner by Anya</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #332c40;
+      --muted: #777184;
+      --purple: #65527f;
+      --purple-dark: #514064;
+      --lavender: #e8e0f1;
+      --line: #e7dfed;
+      --paper: #f6f2fa;
+      --white: #fffefe;
+      --gold: #f2c500;
+    }
+    * { box-sizing: border-box; }
+    body {
+      min-height: 100vh;
+      margin: 0;
+      padding: 0 18px 25px;
+      color: var(--ink);
+      background:
+        radial-gradient(ellipse at 50% -10%, rgba(216,191,216,.54), transparent 42rem),
+        var(--paper);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans Thai", sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    .topbar {
+      display: flex;
+      width: min(100%, 780px);
+      min-height: 62px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin: 0 auto;
+      border-bottom: 1px solid rgba(189,181,213,.42);
+    }
+    .brand {
+      color: var(--purple-dark);
+      font-size: 11px;
+      font-weight: 760;
+      letter-spacing: .13em;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .brand span { font-weight: 450; }
+    .language-switch {
+      display: flex;
+      gap: 3px;
+      padding: 3px;
+      border: 1px solid #c7bfd7;
+      border-radius: 999px;
+      background: rgba(255,254,254,.85);
+    }
+    .language-switch button {
+      min-width: 45px;
+      border: 0;
+      border-radius: 999px;
+      padding: 6px 9px;
+      color: var(--muted);
+      background: transparent;
+      font: inherit;
+      font-size: 10px;
+      cursor: pointer;
+    }
+    .language-switch button[aria-pressed="true"] { color: var(--purple-dark); background: var(--lavender); }
+    .language-switch button:focus-visible, a:focus-visible { outline: 3px solid rgba(101,82,127,.32); outline-offset: 3px; }
+    .page { width: min(100%, 510px); margin: 0 auto; }
+    .profile { padding: 39px 18px 26px; text-align: center; }
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      color: var(--purple);
+      font-size: 10px;
+      font-weight: 750;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before, .eyebrow::after { width: 19px; height: 1px; background: currentColor; content: ""; }
+    h1 {
+      margin: 12px 0 7px;
+      font-family: Georgia, "Noto Serif Thai", serif;
+      font-size: clamp(32px, 8vw, 45px);
+      font-weight: 500;
+      letter-spacing: -.045em;
+      line-height: 1.2;
+    }
+    h1 span { display: inline-block; margin-left: 3px; font-family: sans-serif; font-size: .76em; vertical-align: .08em; }
+    .date-line { margin: 0; color: var(--purple); font-size: 13px; font-weight: 670; letter-spacing: .03em; }
+    .intro { margin: 11px auto 0; color: var(--muted); font-size: 12px; line-height: 1.8; }
+    .section-label {
+      margin: 0 3px 10px;
+      color: #82788d;
+      font-size: 10px;
+      font-weight: 750;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+    .links { display: grid; gap: 11px; }
+    .link-card {
+      display: flex;
+      min-height: 78px;
+      align-items: center;
+      gap: 14px;
+      padding: 13px 16px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      color: var(--ink);
+      background: rgba(255,254,254,.95);
+      box-shadow: 0 6px 18px rgba(65,52,83,.055);
+      text-decoration: none;
+      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+    }
+    .link-card:hover { transform: translateY(-2px); border-color: #bdb5d5; box-shadow: 0 10px 24px rgba(65,52,83,.11); }
+    .link-icon {
+      display: grid;
+      width: 45px;
+      height: 45px;
+      flex: 0 0 45px;
+      place-items: center;
+      border: 1px solid rgba(189,181,213,.58);
+      border-radius: 12px;
+      background: #f2eef7;
+      font-size: 21px;
+    }
+    .link-card:nth-child(2) .link-icon { background: #faf5e2; border-color: #eee1a7; }
+    .link-text { min-width: 0; flex: 1; }
+    .link-title { display: block; font-size: 14px; font-weight: 730; line-height: 1.45; }
+    .link-detail { display: block; margin-top: 3px; color: var(--muted); font-size: 11px; line-height: 1.55; }
+    .arrow { color: #8a7a9e; font-size: 20px; line-height: 1; }
+    footer { padding: 27px 8px 0; color: #8a8391; text-align: center; font-size: 10px; line-height: 1.8; }
+    footer strong { display: block; color: var(--purple-dark); font-size: 10px; letter-spacing: .12em; }
+    @media (max-width: 420px) {
+      body { padding-right: 15px; padding-left: 15px; }
+      .topbar { min-height: 58px; }
+      .brand { font-size: 9px; letter-spacing: .1em; }
+      .profile { padding-top: 33px; }
+      .link-card { min-height: 73px; padding: 12px; }
+    }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; } }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="./" aria-label="Japan Planner by Anya">JAPAN PLANNER <span>BY ANYA</span></a>
+    <div class="language-switch" role="group" aria-label="เลือกภาษา" data-i18n-aria="languageLabel">
+      <button type="button" data-language="th" aria-pressed="true">ไทย</button>
+      <button type="button" data-language="ja" aria-pressed="false">日本語</button>
+    </div>
+  </header>
+  <main class="page">
+    <section class="profile" aria-labelledby="page-title">
+      <div class="eyebrow" data-i18n="eyebrow">YOUR TOKYO JOURNEY</div>
+      <h1 id="page-title">Tokyo itinerary <span aria-hidden="true">🗼</span></h1>
+      <p class="date-line" data-i18n="dateLine">10–14 ตุลาคม 2026 · โตเกียว</p>
+      <p class="intro" data-i18n="intro">รวมเอกสารสำคัญสำหรับทริปนี้<br>เลือกเปิดหัวข้อที่ต้องการได้เลย</p>
+    </section>
+    <section aria-labelledby="documents-title">
+      <h2 class="section-label" id="documents-title" data-i18n="documentsLabel">เอกสารทริปนี้</h2>
+      <nav class="links" aria-label="เอกสารทริป" data-i18n-aria="documentsLabel">
+        <a class="link-card" href="restaurant/">
+          <span class="link-icon" aria-hidden="true">🍣</span>
+          <span class="link-text"><span class="link-title" data-i18n="restaurantTitle">เอกสารร้านอาหาร</span><span class="link-detail" data-i18n="restaurantDetail">รวม 7 ร้าน · แบ่งตามวันเดินทาง</span></span>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="link-card" href="tricks/">
+          <span class="link-icon" aria-hidden="true">📝</span>
+          <span class="link-text"><span class="link-title" data-i18n="notesTitle">Trick &amp; Information</span><span class="link-detail" data-i18n="notesDetail">10 ข้อควรรู้เรื่องการสั่งอาหารและมารยาทในร้านญี่ปุ่น</span></span>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+      </nav>
+    </section>
+    <footer><strong>JAPAN PLANNER BY ANYA</strong><span data-i18n="footer">วางแผนทริปได้ง่ายขึ้นในที่เดียว</span></footer>
+  </main>
+  <script>
+    const languageText = {
+      th: {
+        languageLabel: 'เลือกภาษา', eyebrow: 'YOUR TOKYO JOURNEY',
+        dateLine: '10–14 ตุลาคม 2026 · โตเกียว', intro: 'รวมเอกสารสำคัญสำหรับทริปนี้<br>เลือกเปิดหัวข้อที่ต้องการได้เลย',
+        documentsLabel: 'เอกสารทริปนี้', restaurantTitle: 'เอกสารร้านอาหาร',
+        restaurantDetail: 'รวม 7 ร้าน · แบ่งตามวันเดินทาง', notesTitle: 'Trick & Information',
+        notesDetail: '10 ข้อควรรู้เรื่องการสั่งอาหารและมารยาทในร้านญี่ปุ่น', footer: 'วางแผนทริปได้ง่ายขึ้นในที่เดียว'
+      },
+      ja: {
+        languageLabel: '言語を選択', eyebrow: 'YOUR TOKYO JOURNEY',
+        dateLine: '2026年10月10日〜14日 · 東京', intro: 'この旅行に必要な資料をまとめました。<br>見たい項目を選んでください。',
+        documentsLabel: '旅行の資料', restaurantTitle: 'レストラン案内',
+        restaurantDetail: '7軒 · 日程別に掲載', notesTitle: '食事のヒント＆日本の飲食店情報',
+        notesDetail: '注文方法とお店でのマナー 10選', footer: '旅行の準備を、ひとつの場所で。'
+      }
+    };
+    function setLanguage(language) {
+      const messages = languageText[language] || languageText.th;
+      document.documentElement.lang = language;
+      document.querySelectorAll('[data-i18n]').forEach(element => {
+        const value = messages[element.dataset.i18n];
+        if (value !== undefined) element.innerHTML = value;
+      });
+      document.querySelectorAll('[data-i18n-aria]').forEach(element => {
+        element.setAttribute('aria-label', messages[element.dataset.i18nAria]);
+      });
+      document.querySelectorAll('[data-language]').forEach(button => {
+        button.setAttribute('aria-pressed', String(button.dataset.language === language));
+      });
+      try { localStorage.setItem('anya-itinerary-language', language); } catch (_) {}
+    }
+    document.querySelectorAll('[data-language]').forEach(button => {
+      button.addEventListener('click', () => setLanguage(button.dataset.language));
+    });
+    let savedLanguage = 'th';
+    try { savedLanguage = localStorage.getItem('anya-itinerary-language') || 'th'; } catch (_) {}
+    setLanguage(savedLanguage);
+  </script>
+</body>
+</html>

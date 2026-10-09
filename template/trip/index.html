@@ -1,1 +1,205 @@
-<!doctype html><html><body>placeholder</body></html>
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f5fa">
+  <meta name="description" content="แผนเที่ยวโตเกียว 7 วัน | Japan Planner by Anya">
+  <title>Discover Tokyo 7 Days | Japan Planner by Anya</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #332c40;
+      --muted: #777184;
+      --purple: #65527f;
+      --purple-dark: #514064;
+      --lavender: #e8e0f1;
+      --lavender-strong: #cbc3e3;
+      --line: #e6dfed;
+      --paper: #f7f5fa;
+      --card: #fffefe;
+      --mauve: #f5eef6;
+      --gold: #f2c500;
+      --shadow: 0 10px 28px rgba(65,52,83,.06);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; color: var(--ink); background: var(--paper); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans Thai", sans-serif; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; }
+    .shell { width: min(100% - 30px, 900px); margin: 0 auto; padding-bottom: 48px; }
+    .topbar { min-height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 14px; border-bottom: 1px solid rgba(189,181,213,.38); }
+    .brand { color: var(--purple-dark); font-size: 11px; font-weight: 750; letter-spacing: .12em; text-decoration: none; white-space: nowrap; }
+    .brand span { font-weight: 450; }
+    .language-switch { display: none; }
+    .language-switch button { min-width: 43px; border: 0; border-radius: 999px; padding: 6px 9px; color: var(--muted); background: transparent; font: inherit; font-size: 10px; cursor: pointer; }
+    .language-switch button[aria-pressed="true"] { color: var(--purple-dark); background: var(--lavender); }
+    .language-switch button:focus-visible, a:focus-visible { outline: 2px solid var(--purple); outline-offset: 3px; }
+    .hero { margin: 20px 0 18px; padding: 23px 25px 24px; border: 1px solid rgba(189,181,213,.62); border-radius: 16px; background: linear-gradient(125deg, rgba(203,195,227,.44), rgba(216,191,216,.27)); }
+    .back-link { display: inline-flex; align-items: center; gap: 7px; margin-bottom: 17px; padding: 8px 12px; border: 1px solid #bdb5d5; border-radius: 999px; color: var(--purple-dark); background: rgba(255,254,254,.84); font-size: 12px; font-weight: 680; text-decoration: none; }
+    .eyebrow { display: flex; align-items: center; gap: 8px; color: var(--purple); font-size: 10px; font-weight: 750; letter-spacing: .13em; text-transform: uppercase; }
+    .eyebrow::before { width: 18px; height: 1px; background: currentColor; content: ""; }
+    h1 { margin: 10px 0 7px; font-family: Georgia, "Noto Serif Thai", serif; font-size: clamp(29px, 6vw, 43px); font-weight: 500; line-height: 1.22; }
+    .date-line { margin: 0; color: var(--purple); font-size: 14px; font-weight: 700; }
+    .hero-copy { margin: 10px 0 0; color: #686274; font-size: 13px; line-height: 1.8; }
+    .overview { display: grid; grid-template-columns: repeat(3, 1fr); gap: 9px; margin: 0 0 18px; }
+    .overview-card { padding: 13px 14px; border: 1px solid var(--line); border-radius: 12px; background: var(--card); box-shadow: var(--shadow); }
+    .overview-label { display: block; color: var(--muted); font-size: 10px; letter-spacing: .06em; }
+    .overview-value { display: block; margin-top: 4px; color: var(--purple-dark); font-size: 14px; font-weight: 750; }
+    .day-nav { position: sticky; top: 8px; z-index: 2; display: flex; gap: 6px; overflow-x: auto; margin-bottom: 22px; padding: 6px; border: 1px solid rgba(189,181,213,.55); border-radius: 12px; background: rgba(247,245,250,.9); backdrop-filter: blur(10px); }
+    .day-nav a { flex: 1 0 76px; padding: 8px 9px; border-radius: 8px; color: var(--muted); text-align: center; font-size: 11px; text-decoration: none; white-space: nowrap; }
+    .day-nav a.home-link { color: var(--purple-dark); background: var(--lavender); font-weight: 750; }
+    .day-nav a:hover, .day-nav a:focus-visible { color: var(--purple-dark); background: var(--lavender); outline: none; }
+    .day { scroll-margin-top: 76px; margin-bottom: 14px; padding: 18px 18px 19px; border: 1px solid var(--line); border-radius: 14px; background: var(--card); box-shadow: var(--shadow); }
+    .day-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding-bottom: 13px; border-bottom: 1px solid var(--line); }
+    .day-kicker { color: var(--purple); font-size: 10px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+    .day h2 { margin: 4px 0 0; font-family: Georgia, "Noto Serif Thai", serif; font-size: 23px; font-weight: 500; line-height: 1.3; }
+    .day-date { color: var(--muted); font-size: 11px; white-space: nowrap; }
+    .timeline { display: grid; gap: 0; margin-top: 13px; }
+    .stop { display: grid; grid-template-columns: 67px 15px 1fr; gap: 9px; min-height: 52px; }
+    .time { padding-top: 1px; color: var(--purple-dark); font-size: 12px; font-weight: 750; }
+    .dot-line { position: relative; display: flex; justify-content: center; }
+    .dot-line::before { width: 8px; height: 8px; margin-top: 5px; border: 2px solid var(--purple); border-radius: 50%; background: var(--card); content: ""; z-index: 1; }
+    .dot-line::after { position: absolute; top: 13px; bottom: -2px; width: 1px; background: var(--lavender-strong); content: ""; }
+    .stop:last-child .dot-line::after { display: none; }
+    .activity { padding-bottom: 13px; }
+    .activity strong { display: block; font-size: 14px; font-weight: 750; line-height: 1.5; }
+    .activity span { display: block; margin-top: 2px; color: var(--muted); font-size: 11px; line-height: 1.6; }
+    .activity-list { margin: 5px 0 0; padding-left: 18px; color: var(--muted); font-size: 12px; line-height: 1.75; }
+    .activity-list li { padding-left: 2px; }
+    .tag { display: inline-block !important; width: fit-content; margin-top: 5px !important; padding: 2px 7px; border-radius: 5px; color: var(--purple-dark) !important; background: var(--mauve); font-size: 10px !important; }
+    footer { margin-top: 29px; padding: 27px 8px 0; border-top: 1px solid var(--line); color: #8a8391; text-align: center; font-size: 10px; line-height: 1.8; }
+    footer strong { display: block; color: var(--purple-dark); font-size: 10px; letter-spacing: .12em; }
+    footer .remark { display: block; margin-top: 9px; color: #8f3f4d; font-size: 10px; line-height: 1.7; }
+    .social-links { display: flex; justify-content: center; gap: 8px; margin-top: 12px; }
+    .social-link { display: grid; width: 25px; height: 25px; place-items: center; border: 1px solid rgba(101,82,127,.28); border-radius: 50%; color: var(--purple); background: rgba(255,254,254,.55); text-decoration: none; transition: background .18s ease, color .18s ease, transform .18s ease; }
+    .social-link:hover { color: #fff; background: var(--purple); transform: translateY(-1px); }
+    .social-link span { font-size: 11px; font-weight: 750; line-height: 1; }
+    .social-link.line span { font-size: 7px; letter-spacing: -.04em; }
+    .social-link svg { width: 14px; height: 14px; display: block; }
+    .social-link.instagram svg { width: 15px; height: 15px; }
+    .social-link.tiktok svg { width: 15px; height: 15px; }
+    @media (max-width: 650px) { .shell { width: min(100% - 30px, 900px); } .topbar { min-height: 58px; } .brand { font-size: 9px; letter-spacing: .09em; } .hero { margin-top: 14px; padding: 20px 17px; } .overview-card { padding: 11px 10px; } .overview-value { font-size: 12px; } .day { padding: 16px 14px 17px; } .day-head { display: block; } .day-date { display: block; margin-top: 3px; } }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <a class="brand" href="../index.html" aria-label="Japan Planner by Anya">JAPAN PLANNER <span>BY ANYA</span></a>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="page-title">
+        <a class="back-link" href="../index.html"><span aria-hidden="true">←</span><span data-i18n="back">กลับหน้าแรก</span></a>
+        <div class="eyebrow" data-i18n="eyebrow">YOUR TOKYO JOURNEY</div>
+        <h1 id="page-title" data-i18n="title">Discover Tokyo 7 Days 🗼</h1>
+        <p class="date-line" data-i18n="date">26 กันยายน – 2 ตุลาคม 2026 · โตเกียว</p>
+      </section>
+
+      <section class="overview" aria-label="สรุปทริป">
+        <div class="overview-card"><span class="overview-label" data-i18n="overview1Label">ระยะเวลา</span><span class="overview-value" data-i18n="overview1Value">7 วัน 6 คืน</span></div>
+        <div class="overview-card"><span class="overview-label" data-i18n="overview2Label">สนามบิน</span><span class="overview-value" data-i18n="overview2Value">Narita (NRT)</span></div>
+        <div class="overview-card"><span class="overview-label" data-i18n="overview3Label">จังหวะทริป</span><span class="overview-value" data-i18n="overview3Value">เดินเล่น · ช้อป · Matcha</span></div>
+      </section>
+
+      <nav class="day-nav" aria-label="เลือกวันเดินทาง">
+        <a class="home-link" href="../index.html">หน้าแรก</a><a href="#day-1">DAY 1</a><a href="#day-2">DAY 2</a><a href="#day-3">DAY 3</a><a href="#day-4">DAY 4</a><a href="#day-5">DAY 5</a><a href="#day-6">DAY 6</a><a href="#day-7">DAY 7</a>
+      </nav>
+
+      <section class="day" id="day-1"><div class="day-head"><div><div class="day-kicker">DAY 01 · <span data-i18n="d1Date">เสาร์ 26 ก.ย. 2026</span></div><h2 data-i18n="d1Title">Arrival · Shibuya · Shinjuku</h2></div></div><div class="timeline">
+        <div class="stop"><div class="time">00:22</div><div class="dot-line"></div><div class="activity"><strong data-i18n="d1a1">ออกเดินทางจากกรุงเทพฯ</strong><span data-i18n="d1a1s">เที่ยวบินกลางคืนจากสุวรรณภูมิ</span></div></div>
+        <div class="stop"><div class="time">08:29</div><div class="dot-line"></div><div class="activity"><strong data-i18n="d1a2">ถึง Narita International Airport</strong><span data-i18n="d1a2s">Estimate time finish 09:30</span></div></div>
+        <div class="stop"><div class="time">11:00</div><div class="dot-line"></div><div class="activity"><strong data-i18n="d1a3">ถึงที่พัก Shibuya Excel Hotel Tokyu</strong><span data-i18n="d1a3s">เดินทางด้วย Airport Transfer · สั่งชาถั่วดำ น้ำมันตับปลา ไปส่งวันเข้าพัก</span></div></div>
+        <div class="stop"><div class="time">12:00</div><div class="dot-line"></div><div class="activity"><strong data-i18n="d1a4">Lunch - Miyazaki Fudo Kuwanne Shinjuku</strong><span data-i18n="d1a4s">มื้อกลางวันในย่าน Shinjuku</span></div></div>
+        <div class="stop"><div class="time">13:00</div><div class="dot-line"></div><div class="activity"><strong data-i18n="d1a5">Shinjuku strolling · ตามล่า Matcha</strong><ul class="activity-list"><li>ควรไปก่อน</li><li>Kanbayashi Shunsho Honten Shinjuku Branch Matcha bar</li><li>Ikedaya teastore ร้านชาคุณลุง</li><li>Seishō-en Shinjuku Store</li><li>Kiddyland shinjuku</li><li>Isetan Shinjuku</li><li>Chrome hearts shinjuku</li></ul></div></div>
+        <div class="stop"><div class="time">19:00</div><div class="dot-line"></div><div class="activity"><strong data-i18n="d1a6">Dinner - Yugentei Shinjuku</strong><span data-i18n="d1a6s">เนื้อย่าง · Kan-agari ปลาย่าง</span></div></div>
+      </div></section>
+
+      <section class="day" id="day-2"><div class="day-head"><div><div class="day-kicker">DAY 02 · <span data-i18n="d2Date">อาทิตย์ 27 ก.ย. 2026</span></div><h2 data-i18n="d2Title">Farmer's Market · Aoyama · Omotesando</h2></div></div><div class="timeline">
+        <div class="stop"><div class="time">08:00</div><div class="dot-line"></div><div class="activity"><strong data-i18n="d2a1">Breakfast - crisscross</strong><span data-i18n="d2a1s">คาเฟ่อาหารเช้า</span></div></div>
+        <div class="stop"><div class="time">09:00</div><div class="dot-line"></div><div class="activity"><strong data-i18n="d2a2">Farmer's Market @ UNU</strong><span data-i18n="d2a2s">เดินดูบรรยากาศตลาดและสินค้าท้องถิ่น</span></div></div>
+        <div class="stop"><div class="time">11:00</div><div class="dot-line"></div><div class="activity"><strong data-i18n="d2a3">Aoyama strolling</strong><ul class="activity-list"><li>CASA LOEWE</li><li>COMME des GARÇONS</li><li>Prada</li><li>Gentle Monster</li><li>sacai</li><li>Chrome Hearts</li><li>Nanaya Aoyama เจลาโตมัทฉะไล่ความเข้ม</li></ul></div></div>
+        <div class="stop"><div class="time">13:00</div><div class="dot-line"></div><div class="activity"><strong data-i18n="d2a4">Lunch - Shabu Shabu yamawarau Omotesando</strong><span data-i18n="d2a4s">มื้อกลางวัน</span></div></div>
+        <div class="stop"><div class="time">14:00</div><div class="dot-line"></div><div class="activity"><strong data-i18n="d2a5">Omotesando / Harajuku strolling</strong><ul class="activity-list"><li>Maison Margiela Omotesando</li><li>Ami Paris Omotesando</li><li>I’m donut - GYRE / MoMA Design Store</li><li>Afternoon Tea LOVE&amp;TABLE - Omotesando Hills</li><li>ร้านเค้กญี่ปุ่น - Flying Tiger Copenhagen Omotesandō</li><li>Tarte &amp; Table by L’AS - Kiddy Land</li><li>ร้านทาร์ตจากร้านอาหารติด Michelin ปีนี้ เพิ่งเปิด 10/09</li><li>3COINS Harajuku</li><li>＠cosme สามารถวอล์กอินได้แต่อาจจะนาน</li><li>arte ebisu</li></ul></div></div>
+        <div class="stop"><div class="time">18:00</div><div class="dot-line"></div><div class="activity"><strong data-i18n="d2a6">Dinner - Torafuku Aoyama Honten</strong><ul class="activity-list"><li>ร้านอาหารคุณแม่ อยู่ระหว่างทางเดินกลับชิบูย่าค่ะ</li><li>Yakiniku Jumbo Shirokane</li><li>จองผ่าน Tablecheck</li></ul></div></div>
+      </div></section>
+
+      <section class="day" id="day-3"><div class="day-head"><div><div class="day-kicker">DAY 03 · <span data-i18n="d3Date">จันทร์ 28 ก.ย. 2026</span></div><h2 data-i18n="d3Title">Tsukiji · Ginza</h2></div></div><div class="timeline">
+        <div class="stop"><div class="time">08:00</div><div class="dot-line"></div><div class="activity"><strong data-i18n="d3a1">ตลาดปลา Tsukiji</strong><span data-i18n="d3a1s">เริ่มเช้าด้วยตลาดปลา</span></div></div>
+        <div class="stop"><div class="time">09:00</div><div class="dot-line"></div><div class="activity"><strong data-i18n="d3a2">Breakfast - Sushi Kuni</strong><span data-i18n="d3a2s">ข้าวหน้าปลาดิบ</span></div></div>
+        <div class="stop"><div class="time">11:00</div><div class="dot-line"></div><div class="activity"><strong data-i18n="d3a3">Ginza strolling</strong><ul class="activity-list"><li>Cloud Club Matcha</li><li>Ginza Six</li><li>Dover Street Market Ginza</li><li>OSMIC FIRST GINZA SIX มะเขือเทศ</li><li>@cosme STORE</li><li>CIBONE CASE (GINZA SIX 4F)</li><li>Plaza Ginza (Lumine)</li><li>MATCHAMON GINZA SIX ร้าน Matcha stand ใช้ชาจาก Kagoshima คล้าย Cloud club</li></ul></div></div>
+        <div class="stop"><div class="time">12:00</div><div class="dot-line"></div><div class="activity"><strong data-i18n="d3a4">Lunch - Hyoutan ya 6choume ten</strong><span data-i18n="d3a4s">ร้านปลาไหลหลัง Ginza Six</span></div></div>
+        <div class="stop"><div class="time">13:00</div><div class="dot-line"></div><div class="activity"><strong data-i18n="d3a5">Ginza strolling</strong><ul class="activity-list"><li>Brand off</li><li>Loft Ginza</li><li>Sanrio World Ginza</li><li>MoMA Design Store Ginza</li><li>3COINS+plus</li><li>Muji Ginza</li><li>Ginza Itoya</li></ul></div></div>
+        <div class="stop"><div class="time">19:00</div><div class="dot-line"></div><div class="activity"><strong data-i18n="d3a6">Dinner - Wagokoro Tonkatsu Anzu Hanare</strong><ul class="activity-list"><li>ทงคัตสึหม้ออบ</li><li>จองผ่าน Tablecheck</li></ul></div></div>
+      </div></section>
+
+      <section class="day" id="day-4"><div class="day-head"><div><div class="day-kicker">DAY 04 · <span data-i18n="d4Date">อังคาร 29 ก.ย. 2026</span></div><h2 data-i18n="d4Title">Ueno · Kappabashi · Azabudai</h2></div></div><div class="timeline">
+        <div class="stop"><div class="time">09:00</div><div class="dot-line"></div><div class="activity"><strong data-i18n="d4a1">Breakfast - goodNess 渋谷</strong><span data-i18n="d4a1s">ร้านคาเฟ่และอาหารเช้าสไตล์ฮาวาย</span></div></div>
+        <div class="stop"><div class="time">10:00</div><div class="dot-line"></div><div class="activity"><strong data-i18n="d4a2">East side Matcha hunting (Ueno ~)</strong><ul class="activity-list"><li>Tsukasaen Tea Stall</li><li>Sankō-en Store</li><li>Kiminoen Tea Garden</li><li>Koyamaen ร้าน Matcha stand</li><li>Savor the ร้านมีเบลนด์หลายชารวมกัน รวมถึงมีเบลนด์ Matcha Ueno Suribachiyama no Midori ที่มีตัว fukuoka ด้วย</li></ul></div></div>
+        <div class="stop"><div class="time">13:00</div><div class="dot-line"></div><div class="activity"><strong data-i18n="d4a3">Lunch - Aidaya Ueno</strong><ul class="activity-list"><li>ร้าน Tsukemen ติด Bib gourmand</li><li>คนเยอะเพราะร้านดัง</li><li>วัดหัวไชเท้า</li></ul></div></div>
+        <div class="stop"><div class="time">14:00</div><div class="dot-line"></div><div class="activity"><strong data-i18n="d4a4">Kappabashi Kitchen Supply Town</strong><ul class="activity-list"><li>ร้านมีดและเครื่องครัว</li><li>Kama-Asa</li><li>KAMATA Hakensha ร้านอุปกรณ์เบเกอรี่</li><li>Majimaya</li></ul></div></div>
+        <div class="stop"><div class="time">16:00</div><div class="dot-line"></div><div class="activity"><strong data-i18n="d4a5">วัดล้างเงิน Koami Jinja</strong><span data-i18n="d4a5s">แวะศาลเจ้า</span></div></div>
+        <div class="stop"><div class="time">17:00</div><div class="dot-line"></div><div class="activity"><strong data-i18n="d4a6">Azabudai Hills</strong><span data-i18n="d4a6s">Famima ของ niko</span></div></div>
+        <div class="stop"><div class="time">18:00</div><div class="dot-line"></div><div class="activity"><strong data-i18n="d4a7">Dinner - Kanimatsuri Crab Restaurant</strong><span data-i18n="d4a7s">สามารถจองได้ เพราะ Turnover นาน</span></div></div>
+      </div></section>
+
+      <section class="day" id="day-5"><div class="day-head"><div><div class="day-kicker">DAY 05 · <span data-i18n="d5Date">พุธ 30 ก.ย. 2026</span></div><h2 data-i18n="d5Title">North Tokyo · Ikebukuro · Shibuya</h2></div></div><div class="timeline">
+        <div class="stop"><div class="time">09:00</div><div class="dot-line"></div><div class="activity"><strong data-i18n="d5a1">Breakfast - หาทานง่ายๆ</strong><span data-i18n="d5a1s">เริ่มวันแบบสบาย ๆ</span></div></div>
+        <div class="stop"><div class="time">10:00</div><div class="dot-line"></div><div class="activity"><strong data-i18n="d5a2">North area Matcha hunting</strong><ul class="activity-list"><li>Yamane-en 2 สาขา</li><li>Isodaen Sugamoten</li></ul></div></div>
+        <div class="stop"><div class="time">12:00</div><div class="dot-line"></div><div class="activity"><strong data-i18n="d5a3">Lunch - 遷 sen (Ikebukuro)</strong><ul class="activity-list"><li>ร้านทสึเคเมน สำหรับคุณแม่</li><li>ทางเลือกเพิ่มเติม: Gyukatsu iroha (Ikebukuro) ร้านกิวคัตสึ</li><li>RACINES FARM TO PARK (Ikebukuro) คาเฟ่ Gen Z ลูกค้าวัยรุ่นจะมานั่ง Terrace หรือปูเสื่อนั่งในสวนของร้าน อาหารแนว Brunch Cafe</li></ul></div></div>
+        <div class="stop"><div class="time">13:00</div><div class="dot-line"></div><div class="activity"><strong data-i18n="d5a4">เก็บตก Ginza Strolling</strong><span data-i18n="d5a4s">กลับไปยังจุดที่อยากแวะเพิ่มเติม</span></div></div>
+        <div class="stop"><div class="time">19:00</div><div class="dot-line"></div><div class="activity"><strong data-i18n="d5a5">Omakase Sushi Rokushiki</strong><ul class="activity-list"><li>Omakase ร้านแรก แจ้งเวลาจองได้เลยค่ะ</li><li>Late night Parfait การทานพาเฟต์ยามดึก กำลังฮิตมากในคนญี่ปุ่น</li><li>Parfaiteria bel ช่วงนี้ร้านนี้เป็นร้านแรกที่เริ่มเทรนด์นี้ อาจจะคนเยอะ แต่มีระบบรับคิว และอยู่ตรง Shibuya สามารถเดินเล่นรอได้</li></ul></div></div>
+      </div></section>
+
+      <section class="day" id="day-6"><div class="day-head"><div><div class="day-kicker">DAY 06 · <span data-i18n="d6Date">พฤหัสบดี 1 ต.ค. 2026</span></div><h2 data-i18n="d6Title">Kichijoji · Shibuya</h2></div></div><div class="timeline">
+        <div class="stop"><div class="time">09:00</div><div class="dot-line"></div><div class="activity"><strong data-i18n="d6a1">Breakfast - หาทานง่ายๆ</strong><span data-i18n="d6a1s">เริ่มวันแบบสบาย ๆ</span></div></div>
+        <div class="stop"><div class="time">10:00</div><div class="dot-line"></div><div class="activity"><strong data-i18n="d6a2">Matcha hunting Kichijoji</strong><ul class="activity-list"><li>Yamariya Kichijoji</li><li>Kichijoji SUNROAD shopping district Shopping street เล็ก ๆ มีเวลาว่างมาแถวนี้แล้ว พาคุณแม่เดินเล่นเล็กน้อยได้ค่ะ แต่แถวนี้เป็น local มากๆ ไม่ค่อยมีอะไร</li></ul></div></div>
+        <div class="stop"><div class="time">11:00</div><div class="dot-line"></div><div class="activity"><strong data-i18n="d6a3">Lunch - Ramen Sawada Kichijoji</strong><span data-i18n="d6a3s">มื้อกลางวัน</span></div></div>
+        <div class="stop"><div class="time">12:00</div><div class="dot-line"></div><div class="activity"><strong data-i18n="d6a4">Shibuya strolling / เก็บตก</strong><ul class="activity-list"><li>AKOMEYA TOKYO TOKYU PLAZA</li><li>VILLAGE VANGUARD</li><li>Loft</li><li>Tokyu Hands Shibuya</li><li>HARBS shibuya</li></ul></div></div>
+        <div class="stop"><div class="time">18:00</div><div class="dot-line"></div><div class="activity"><strong data-i18n="d6a5">Dinner - Okonomiyaki Imari Shibuya</strong><span data-i18n="d6a5s">Lobster &amp; Champagne Ebizo (ทางเลือก)</span></div></div>
+      </div></section>
+
+      <section class="day" id="day-7"><div class="day-head"><div><div class="day-kicker">DAY 07 · <span data-i18n="d7Date">ศุกร์ 2 ต.ค. 2026</span></div><h2 data-i18n="d7Title">Fly back home</h2></div></div><div class="timeline">
+        <div class="stop"><div class="time">07:30~</div><div class="dot-line"></div><div class="activity"><strong data-i18n="d7a1">Check-out</strong><span data-i18n="d7a1s">เตรียมสัมภาระและออกเดินทาง</span></div></div>
+        <div class="stop"><div class="time">08:30</div><div class="dot-line"></div><div class="activity"><strong data-i18n="d7a2">Narita International Airport</strong><span data-i18n="d7a2s">ANA Lounge · Terminal 1</span></div></div>
+        <div class="stop"><div class="time">10:50</div><div class="dot-line"></div><div class="activity"><strong data-i18n="d7a3">Depart from Narita Airport</strong><span data-i18n="d7a3s">เที่ยวบิน TG 641</span></div></div>
+        <div class="stop"><div class="time">17:05</div><div class="dot-line"></div><div class="activity"><strong data-i18n="d7a4">Arrived at Suvarnabhumi Bangkok Int'l</strong><span data-i18n="d7a4s">จบทริปโตเกียว 7 วัน</span></div></div>
+      </div></section>
+    </main>
+    <footer><strong>JAPAN PLANNER BY ANYA</strong><span>วางแผนทริปได้ง่ายขึ้นในที่เดียว</span><span class="remark">เว็บไซต์นี้จะถูกลบและเข้าถึงไม่ได้หลังทริปจบ<br>หากต้องการเอกสาร กรุณาติดต่ออันย่าได้ทุกช่องทาง</span><nav class="social-links" aria-label="ช่องทางติดต่อ"><a class="social-link facebook" href="https://www.facebook.com/jpplanneranya" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><span aria-hidden="true">f</span></a><a class="social-link line" href="https://line.me/ti/p/5juCYxEUjk" target="_blank" rel="noopener noreferrer" aria-label="LINE"><span aria-hidden="true">LINE</span></a><a class="social-link instagram" href="https://www.instagram.com/jp.planner.anya/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg></a><a class="social-link tiktok" href="https://www.tiktok.com/@planner.anya" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M19.6 8.2a5.9 5.9 0 0 1-3.8-1.4v7.1a5.5 5.5 0 1 1-4.7-5.4v3a2.6 2.6 0 1 0 1.6 2.4V2.5h3.1a5.8 5.8 0 0 0 3.8 3.7v2z"/></svg></a></nav></footer>
+  </div>
+  <script>
+    const translations = {
+      th: {
+        back:'กลับหน้าแรก', eyebrow:'YOUR TOKYO JOURNEY', title:'Discover Tokyo 7 Days 🗼', date:'26 กันยายน – 2 ตุลาคม 2026 · โตเกียว', intro:'', overview1Label:'ระยะเวลา', overview1Value:'7 วัน 6 คืน', overview2Label:'สนามบิน', overview2Value:'Narita (NRT)', overview3Label:'จังหวะทริป', overview3Value:'เดินเล่น · ช้อป · Matcha', tagFlexible:'',
+        d1Title:'Arrival · Shibuya · Shinjuku',d1Date:'เสาร์ 26 ก.ย. 2026',d1a1:'ออกเดินทางจากกรุงเทพฯ',d1a1s:'เที่ยวบินกลางคืนจากสุวรรณภูมิ',d1a2:'ถึง Narita International Airport',d1a2s:'Estimate time finish 09:30',d1a3:'ถึงที่พัก Shibuya Excel Hotel Tokyu',d1a3s:'เดินทางด้วย Airport Transfer · สั่งชาถั่วดำ น้ำมันตับปลา ไปส่งวันเข้าพัก',d1a4:'Lunch - Miyazaki Fudo Kuwanne Shinjuku',d1a4s:'มื้อกลางวันในย่าน Shinjuku',d1a5:'Shinjuku strolling · ตามล่า Matcha',d1a5s:'',d1a6:'Dinner - Yugentei Shinjuku',d1a6s:'เนื้อย่าง · Kan-agari ปลาย่าง',
+        d2Title:"Farmer's Market · Aoyama · Omotesando",d2Date:'อาทิตย์ 27 ก.ย. 2026',d2a1:'Breakfast - crisscross',d2a1s:'คาเฟ่อาหารเช้า',d2a2:"Farmer's Market @ UNU",d2a2s:'เดินดูบรรยากาศตลาดและสินค้าท้องถิ่น',d2a3:'Aoyama strolling',d2a3s:'CASA LOEWE · COMME des GARÇONS · Prada · Gentle Monster · sacai · Chrome Hearts · Nanaya Aoyama เจลาโตมัทฉะไล่ความเข้ม',d2a4:'Lunch - Shabu Shabu yamawarau Omotesando',d2a4s:'มื้อกลางวัน',d2a5:'Omotesando / Harajuku strolling',d2a5s:'Maison Margiela Omotesando · Ami Paris Omotesando · I’m donut - GYRE / MoMA Design Store · Afternoon Tea LOVE&amp;TABLE - Omotesando Hills · ร้านเค้กญี่ปุ่น - Flying Tiger Copenhagen Omotesandō · Tarte &amp; Table by L’AS - Kiddy Land · ร้านทาร์ตจากร้านอาหารติด Michelin ปีนี้ เพิ่งเปิด 10/09 · 3COINS Harajuku · ＠cosme สามารถวอล์กอินได้แต่อาจจะนาน · arte ebisu',d2a6:'Dinner - Torafuku Aoyama Honten',d2a6s:'ร้านอาหารคุณแม่ อยู่ระหว่างทางเดินกลับชิบูย่าค่ะ · Yakiniku Jumbo Shirokane · จองผ่าน Tablecheck',
+        d3Title:'Tsukiji · Ginza',d3Date:'จันทร์ 28 ก.ย. 2026',d3a1:'ตลาดปลา Tsukiji',d3a1s:'เริ่มเช้าด้วยตลาดปลา',d3a2:'Breakfast - Sushi Kuni',d3a2s:'ข้าวหน้าปลาดิบ',d3a3:'Ginza strolling',d3a3s:'Cloud Club Matcha · Ginza Six · Dover Street Market Ginza · OSMIC FIRST GINZA SIX มะเขือเทศ · @cosme STORE · CIBONE CASE (GINZA SIX 4F) · Plaza Ginza (Lumine) · MATCHAMON GINZA SIX ร้าน Matcha stand ใช้ชาจาก Kagoshima คล้าย Cloud club',d3a4:'Lunch - Hyoutan ya 6choume ten',d3a4s:'ร้านปลาไหลหลัง Ginza Six',d3a5:'Ginza strolling',d3a5s:'Brand off · Loft Ginza · Sanrio World Ginza · MoMA Design Store Ginza · 3COINS+plus · Muji Ginza · Ginza Itoya',d3a6:'Dinner - Wagokoro Tonkatsu Anzu Hanare',d3a6s:'ทงคัตสึหม้ออบ · จองผ่าน Tablecheck',
+        d4Title:'Ueno · Kappabashi · Azabudai',d4Date:'อังคาร 29 ก.ย. 2026',d4a1:'Breakfast - goodNess 渋谷',d4a1s:'ร้านคาเฟ่และอาหารเช้าสไตล์ฮาวาย',d4a2:'East side Matcha hunting (Ueno ~)',d4a2s:'Tsukasaen Tea Stall · Sankō-en Store · Kiminoen Tea Garden · Koyamaen ร้าน Matcha stand · Savor the ร้านมีเบลนด์หลายชารวมกัน รวมถึงมีเบลนด์ Matcha Ueno Suribachiyama no Midori ที่มีตัว fukuoka ด้วย',d4a3:'Lunch - Aidaya Ueno',d4a3s:'ร้าน Tsukemen ติด Bib gourmand · คนเยอะเพราะร้านดัง · วัดหัวไชเท้า',d4a4:'Kappabashi Kitchen Supply Town',d4a4s:'ร้านมีดและเครื่องครัว · Kama-Asa · KAMATA Hakensha ร้านอุปกรณ์เบเกอรี่ · Majimaya',d4a5:'วัดล้างเงิน Koami Jinja',d4a5s:'แวะศาลเจ้า',d4a6:'Azabudai Hills',d4a6s:'Famima ของ niko',d4a7:'Dinner - Kanimatsuri Crab Restaurant',d4a7s:'สามารถจองได้ เพราะ Turnover นาน',
+        d5Title:'North Tokyo · Ikebukuro · Shibuya',d5Date:'พุธ 30 ก.ย. 2026',d5a1:'Breakfast - หาทานง่ายๆ',d5a1s:'เริ่มวันแบบสบาย ๆ',d5a2:'North area Matcha hunting',d5a2s:'Yamane-en 2 สาขา · Isodaen Sugamoten',d5a3:'Lunch - 遷 sen (Ikebukuro)',d5a3s:'ร้านทสึเคเมน สำหรับคุณแม่ · ทางเลือกเพิ่มเติม: Gyukatsu iroha (Ikebukuro) ร้านกิวคัตสึ · RACINES FARM TO PARK (Ikebukuro) คาเฟ่ Gen Z ลูกค้าวัยรุ่นจะมานั่ง Terrace หรือปูเสื่อนั่งในสวนของร้าน อาหารแนว Brunch Cafe',d5a4:'เก็บตก Ginza Strolling',d5a4s:'กลับไปยังจุดที่อยากแวะเพิ่มเติม',d5a5:'Omakase Sushi Rokushiki',d5a5s:'Omakase ร้านแรก แจ้งเวลาจองได้เลยค่ะ · Late night Parfait การทานพาเฟต์ยามดึก กำลังฮิตมากในคนญี่ปุ่น · Parfaiteria bel ช่วงนี้ร้านนี้เป็นร้านแรกที่เริ่มเทรนด์นี้ อาจจะคนเยอะ แต่มีระบบรับคิว และอยู่ตรง Shibuya สามารถเดินเล่นรอได้',
+        d6Title:'Kichijoji · Shibuya',d6Date:'พฤหัสบดี 1 ต.ค. 2026',d6a1:'Breakfast - หาทานง่ายๆ',d6a1s:'เริ่มวันแบบสบาย ๆ',d6a2:'Matcha hunting Kichijoji',d6a2s:'Yamariya Kichijoji · Kichijoji SUNROAD shopping district Shopping street เล็ก ๆ มีเวลาว่างมาแถวนี้แล้ว พาคุณแม่เดินเล่นเล็กน้อยได้ค่ะ แต่แถวนี้เป็น local มากๆ ไม่ค่อยมีอะไร',d6a3:'Lunch - Ramen Sawada Kichijoji',d6a3s:'มื้อกลางวัน',d6a4:'Shibuya strolling / เก็บตก',d6a4s:'AKOMEYA TOKYO TOKYU PLAZA · VILLAGE VANGUARD · Loft · Tokyu Hands Shibuya · HARBS shibuya',d6a5:'Dinner - Okonomiyaki Imari Shibuya',d6a5s:'Lobster & Champagne Ebizo (ทางเลือก)',
+        d7Title:'Fly back home',d7Date:'ศุกร์ 2 ต.ค. 2026',d7a1:'Check-out',d7a1s:'เตรียมสัมภาระและออกเดินทาง',d7a2:'Narita International Airport',d7a2s:'ANA Lounge · Terminal 1',d7a3:'Depart from Narita Airport',d7a3s:'เที่ยวบิน TG 641',d7a4:"Arrived at Suvarnabhumi Bangkok Int'l",d7a4s:'จบทริปโตเกียว 7 วัน',footer:'แผนเที่ยวตามรายละเอียดต้นฉบับ · ไม่ต้องเปิดเอกสารเพิ่มเติม'
+      },
+      ja: {
+        back:'旅行資料のトップへ戻る',eyebrow:'YOUR TOKYO JOURNEY',title:'Discover Tokyo 7 Days 🗼',date:'2026年9月26日〜10月2日 · 東京',intro:'時間・エリア・主な予定を1ページにまとめた、見やすいデイリープランです。',overview1Label:'期間',overview1Value:'7日間 6泊',overview2Label:'空港',overview2Value:'成田 (NRT)',overview3Label:'旅のテーマ','overview3Value':'散策 · 買い物 · 抹茶',tagFlexible:'体力に合わせて調整',
+        d1Title:'Arrival · Shibuya · Shinjuku',d1Date:'2026年9月26日（土）',d1a1:'バンコクを出発',d1a1s:'スワンナプーム空港から夜便',d1a2:'成田国際空港に到着',d1a2s:'空港手続き後、東京へ移動',d1a3:'渋谷でチェックイン',d1a3s:'荷物を置いて、無理なく旅をスタート',d1a4:'新宿を散策',d1a4s:'お茶・抹茶めぐりとショッピング',d1a5:'夕食・休憩',d1a5s:'初日はゆっくり終了',
+        d2Title:"Farmer's Market · Aoyama · Omotesando",d2Date:'2026年9月27日（日）',d2a1:'朝食からスタート',d2a1s:'歩く日に備える',d2a2:"Farmer's Market @ UNU",d2a2s:'マーケットとローカルな雰囲気を楽しむ',d2a3:'青山を散策',d2a3s:'ファッション・デザイン・抹茶',d2a4:'表参道・原宿',d2a4s:'ショッピングとカフェ',d2a5:'夕食・渋谷へ戻る',d2a5s:'宿の近くを歩いて一日を締めくくる',
+        d3Title:'Tsukiji · Ginza',d3Date:'2026年9月28日（月）',d3a1:'築地場外市場',d3a1s:'市場の朝の雰囲気を楽しむ',d3a2:'銀座を散策',d3a2s:'GINZA SIX・お茶・デザインショップ',d3a3:'銀座の続きを楽しむ',d3a3s:'日本ブランドやライフスタイルショップを自由に',d3a4:'夕食・ホテルへ戻る',d3a4s:'銀座で歩いた後は休憩',
+        d4Title:'Ueno · Kappabashi · Azabudai',d4Date:'2026年9月29日（火）',d4a1:'朝食・出発',d4a1s:'東京東側へ移動',d4a2:'東側で抹茶めぐり',d4a2s:'上野エリアのお茶と抹茶',d4a3:'かっぱ橋道具街',d4a3s:'包丁・キッチン用品・製菓用品',d4a4:'小網神社',d4a4s:'神社に立ち寄る',d4a5:'麻布台ヒルズ',d4a5s:'建築と夕方の雰囲気を楽しむ',d4a6:'夕食',d4a6s:'麻布台エリアで一日を終了',
+        d5Title:'North Tokyo · Ikebukuro · Shibuya',d5Date:'2026年9月30日（水）',d5a1:'簡単な朝食',d5a1s:'ゆっくり出発',d5a2:'北側で抹茶めぐり',d5a2s:'東京北部のお茶スポット',d5a3:'池袋',d5a3s:'昼食と池袋散策',d5a4:'銀座の続きを楽しむ',d5a4s:'行きたい場所を追加で訪問',d5a5:'夕食・夜パフェ',d5a5s:'元気があれば東京らしい夜のデザート',
+        d6Title:'Kichijoji · Shibuya',d6Date:'2026年10月1日（木）',d6a1:'簡単な朝食',d6a1s:'最終日の散策に備える',d6a2:'吉祥寺で抹茶めぐり',d6a2s:'吉祥寺サンロードとローカルな街並み',d6a3:'昼食・渋谷へ戻る',d6a3s:'渋谷への移動時間を確保',d6a4:'渋谷散策・買い物',d6a4s:'雑貨・本・ライフスタイル・スイーツ',d6a5:'最後の夕食',d6a5s:'荷造りをして帰国準備',
+        d7Title:'Fly back home',d7Date:'2026年10月2日（金）',d7a1:'チェックアウト',d7a1s:'荷物を確認して空港へ',d7a2:'成田国際空港',d7a2s:'チェックインとラウンジの時間を確保',d7a3:'バンコクへ出発',d7a3s:'成田第1ターミナルから出発',d7a4:'スワンナプーム到着',d7a4s:'7日間の東京旅行を終了',footer:'このプランは移動と主な活動に集中し、レストラン情報を分けて見やすくしています。'
+      }
+    };
+    function setLanguage(language) {
+      const messages = translations[language] || translations.th;
+      document.documentElement.lang = language;
+      document.querySelectorAll('[data-i18n]').forEach(el => { if (messages[el.dataset.i18n] !== undefined) el.textContent = messages[el.dataset.i18n]; });
+      document.querySelectorAll('[data-language]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.language === language)));
+      try { localStorage.setItem('anya-trip-language', language); } catch (_) {}
+    }
+    document.querySelectorAll('[data-language]').forEach(button => button.addEventListener('click', () => setLanguage(button.dataset.language)));
+    setLanguage('th');
+  </script>
+</body>
+</html>

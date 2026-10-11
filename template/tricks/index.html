@@ -48,8 +48,14 @@
     .tip p { margin: 0; color: #5f5968; font-size: 13px; line-height: 1.8; }
     .phrase { display: inline-block; margin: 2px 2px 1px 0; padding: 2px 6px; border-radius: 5px; color: var(--purple-ink); background: var(--purple-soft); font-weight: 700; }
     .tip-note { margin-top: 7px !important; padding-top: 7px; border-top: 1px solid var(--line); color: var(--muted) !important; font-size: 10px !important; }
-    footer { margin-top: 28px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); text-align: center; font-size: 10px; line-height: 1.8; }
-    footer strong { color: var(--purple-ink); letter-spacing: .1em; }
+    footer { margin-top: 29px; padding: 27px 8px 0; border-top: 1px solid var(--line); color: #8a8391; text-align: center; font-size: 10px; line-height: 1.8; }
+    footer strong { display: block; color: var(--purple-ink); font-size: 10px; letter-spacing: .12em; }
+    footer .remark { display: block; margin-top: 9px; color: #8f3f4d; font-size: 10px; line-height: 1.7; }
+    .social-links { display: flex; justify-content: center; gap: 8px; margin-top: 12px; }
+    .social-link { display: grid; width: 25px; height: 25px; place-items: center; border: 1px solid rgba(101,82,127,.28); border-radius: 50%; color: var(--purple-accent); background: rgba(255,254,254,.55); text-decoration: none; }
+    .social-link span { font-size: 11px; font-weight: 750; line-height: 1; }
+    .social-link.line span { font-size: 7px; letter-spacing: -.04em; }
+    .social-link svg { width: 14px; height: 14px; display: block; }
     @media (max-width: 650px) {
       .shell { padding: 0 15px 42px; }
       .topbar { min-height: 58px; }
@@ -93,7 +99,7 @@
         </div>
       </section>
     </main>
-    <footer><strong>JAPAN PLANNER BY ANYA</strong><br><span data-i18n="footer">กลับไปดูเอกสารทริปอื่น ๆ ได้ที่หน้า Tokyo itinerary</span></footer>
+    <footer><strong>JAPAN PLANNER BY ANYA</strong><span>วางแผนทริปได้ง่ายขึ้นในที่เดียว</span><span class="remark">เว็บไซต์นี้จะถูกลบและเข้าถึงไม่ได้หลังทริปจบ<br>หากต้องการเอกสาร กรุณาติดต่ออันย่าได้ทุกช่องทาง</span><nav class="social-links" aria-label="ช่องทางติดต่อ"><a class="social-link" href="https://www.facebook.com/jpplanneranya" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><span>f</span></a><a class="social-link line" href="https://line.me/ti/p/5juCYxEUjk" target="_blank" rel="noopener noreferrer" aria-label="LINE"><span>LINE</span></a><a class="social-link" href="https://www.instagram.com/jp.planner.anya/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><span>◎</span></a><a class="social-link" href="https://www.tiktok.com/@planner.anya" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><span>♪</span></a></nav></footer>
   </div>
   <script>
     const translations = {

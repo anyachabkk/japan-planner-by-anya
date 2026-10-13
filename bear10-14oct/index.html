@@ -1,3 +1,4 @@
+<!-- Approved Bear customer version -->
 <!doctype html>
 <html lang="th">
 <head>
@@ -15,7 +16,7 @@
       --purple-dark: #514064;
       --lavender: #e8e0f1;
       --line: #e7dfed;
-      --paper: #fbf9fd;
+      --paper: #f6f2fa;
       --white: #fffefe;
       --gold: #f2c500;
     }
@@ -26,7 +27,7 @@
       padding: 0 18px 25px;
       color: var(--ink);
       background:
-        radial-gradient(ellipse at 50% -10%, rgba(216,191,216,.30), transparent 42rem),
+        radial-gradient(ellipse at 50% -10%, rgba(216,191,216,.54), transparent 42rem),
         var(--paper);
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans Thai", sans-serif;
       -webkit-font-smoothing: antialiased;
@@ -52,7 +53,6 @@
     }
     .brand span { font-weight: 450; }
     .language-switch {
-      display: none;
       display: flex;
       gap: 3px;
       padding: 3px;
@@ -133,7 +133,6 @@
       font-size: 21px;
     }
     .link-card:nth-child(2) .link-icon { background: #faf5e2; border-color: #eee1a7; }
-    .link-card.itinerary .link-icon { background: #eeeaf7; border-color: #cfc4e2; }
     .link-text { min-width: 0; flex: 1; }
     .link-title { display: block; font-size: 16px; font-weight: 730; line-height: 1.45; }
     .link-detail { display: block; margin-top: 3px; color: var(--muted); font-size: 11px; line-height: 1.55; }
@@ -162,6 +161,10 @@
 <body>
   <header class="topbar">
     <a class="brand" href="./index.html" aria-label="Japan Planner by Anya">JAPAN PLANNER <span>BY ANYA</span></a>
+    <div class="language-switch" role="group" aria-label="เลือกภาษา" data-i18n-aria="languageLabel">
+      <button type="button" data-language="th" aria-pressed="true">ไทย</button>
+      <button type="button" data-language="ja" aria-pressed="false">日本語</button>
+    </div>
   </header>
   <main class="page">
     <section class="profile" aria-labelledby="page-title">
@@ -172,11 +175,6 @@
     </section>
     <section aria-label="เอกสารทริป" data-i18n-aria="documentsLabel">
       <nav class="links" aria-label="เอกสารทริป" data-i18n-aria="documentsLabel">
-        <a class="link-card itinerary" href="../discover-tokyo-7-days/index.html">
-          <span class="link-icon" aria-hidden="true">🗓️</span>
-          <span class="link-text"><span class="link-title" data-i18n="itineraryTitle">แผนเที่ยวจริง 7 วัน</span><span class="link-detail" data-i18n="itineraryDetail">รวมเวลา ย่าน และกิจกรรมหลัก · ไม่รวมรายละเอียดร้านอาหาร</span></span>
-          <span class="arrow" aria-hidden="true">↗</span>
-        </a>
         <a class="link-card" href="restaurant/index.html">
           <span class="link-icon" aria-hidden="true">🍣</span>
           <span class="link-text"><span class="link-title" data-i18n="restaurantTitle">รายการร้านอาหาร</span><span class="link-detail" data-i18n="restaurantDetail">รวม 7 ร้าน · แบ่งตามวันเดินทาง</span></span>
@@ -201,7 +199,7 @@
       th: {
         languageLabel: 'เลือกภาษา', eyebrow: 'YOUR TOKYO JOURNEY',
         dateLine: '10–14 ตุลาคม 2026 · โตเกียว', intro: 'รวมเอกสารสำคัญสำหรับทริปนี้<br>เลือกเปิดหัวข้อที่ต้องการได้เลย',
-        documentsLabel: 'เอกสารทริปนี้', itineraryTitle: 'แผนเที่ยวจริง 7 วัน', itineraryDetail: 'รวมเวลา ย่าน และกิจกรรมหลัก · ไม่รวมรายละเอียดร้านอาหาร', restaurantTitle: 'รายการร้านอาหาร',
+        documentsLabel: 'เอกสารทริปนี้', restaurantTitle: 'รายการร้านอาหาร',
         restaurantDetail: 'รวม 7 ร้าน · แบ่งตามวันเดินทาง', notesTitle: 'Trick & Information',
         notesDetail: '10 ข้อควรรู้เรื่องการสั่งอาหารและมารยาทในร้านญี่ปุ่น', downloadTitle: 'Google Drive',
         downloadDetail: 'สำหรับดาวน์โหลดเอกสารเก็บไว้ หากลูกค้าต้องการ', footer: 'วางแผนทริปได้ง่ายขึ้นในที่เดียว', remark: 'เว็บไซต์นี้จะถูกลบและเข้าถึงไม่ได้หลังทริปจบ<br>หากต้องการเอกสาร กรุณาติดต่ออันย่าได้ทุกช่องทาง'
@@ -209,7 +207,7 @@
       ja: {
         languageLabel: '言語を選択', eyebrow: 'YOUR TOKYO JOURNEY',
         dateLine: '2026年10月10日〜14日 · 東京', intro: 'この旅行に必要な資料をまとめました。<br>見たい項目を選んでください。',
-        documentsLabel: '旅行の資料', itineraryTitle: '7日間の実際の旅程', itineraryDetail: '時間・エリア・主な予定 · レストラン詳細は含みません', restaurantTitle: 'レストラン案内',
+        documentsLabel: '旅行の資料', restaurantTitle: 'レストラン案内',
         restaurantDetail: '7軒 · 日程別に掲載', notesTitle: '食事のヒント＆日本の飲食店情報',
         notesDetail: '注文方法とお店でのマナー 10選', downloadTitle: 'Google Drive',
         downloadDetail: '必要な場合は、資料を保存・ダウンロードできます', footer: '旅行の準備を、ひとつの場所で。', remark: 'このウェブサイトは旅行終了後に削除され、アクセスできなくなります。<br>資料が必要な場合は、いつでもアニャまでご連絡ください。'

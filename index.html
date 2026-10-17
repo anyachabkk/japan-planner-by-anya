@@ -73,7 +73,7 @@
     }
     .language-switch button[aria-pressed="true"] { color: var(--purple-dark); background: var(--lavender); }
     .language-switch button:focus-visible, a:focus-visible { outline: 3px solid rgba(101,82,127,.32); outline-offset: 3px; }
-    .page { width: min(100%, 510px); margin: 0 auto; }
+    .page { width: min(100%, 640px); margin: 0 auto; }
     .profile { padding: 39px 18px 26px; text-align: center; }
     .eyebrow {
       display: flex;
@@ -90,9 +90,10 @@
     h1 {
       margin: 12px 0 7px;
       font-family: Georgia, "Noto Serif Thai", serif;
-      font-size: clamp(32px, 8vw, 45px);
+      font-size: clamp(28px, 5.4vw, 42px);
       font-weight: 500;
       line-height: 1.2;
+      white-space: nowrap;
     }
     h1 span { display: inline-block; margin-left: 3px; font-family: sans-serif; font-size: .76em; vertical-align: .08em; }
     .date-line { margin: 0; color: var(--purple); font-size: 14px; font-weight: 670; letter-spacing: .03em; }
@@ -105,7 +106,7 @@
       letter-spacing: .14em;
       text-transform: uppercase;
     }
-    .links { display: grid; gap: 11px; }
+    .links { display: grid; max-width: 510px; gap: 11px; margin: 0 auto; }
     .link-card {
       display: flex;
       min-height: 78px;
@@ -129,11 +130,10 @@
       place-items: center;
       border: 1px solid rgba(189,181,213,.58);
       border-radius: 12px;
-      background: #f2eef7;
+      background: #fbfaff;
       font-size: 21px;
     }
-    .link-card:nth-child(2) .link-icon { background: #faf5e2; border-color: #eee1a7; }
-    .link-card.itinerary .link-icon { background: #eeeaf7; border-color: #cfc4e2; }
+    .link-card .link-icon { background: #fbfaff; border-color: #eeeaf5; }
     .link-text { min-width: 0; flex: 1; }
     .link-title { display: block; font-size: 16px; font-weight: 730; line-height: 1.45; }
     .link-detail { display: block; margin-top: 3px; color: var(--muted); font-size: 11px; line-height: 1.55; }
@@ -154,6 +154,7 @@
       .topbar { min-height: 58px; }
       .brand { font-size: 9px; letter-spacing: .1em; }
       .profile { padding-top: 33px; }
+      h1 { font-size: clamp(22px, 7.3vw, 31px); }
       .link-card { min-height: 73px; padding: 12px; }
     }
     @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; } }
@@ -166,25 +167,49 @@
   <main class="page">
     <section class="profile" aria-labelledby="page-title">
       <div class="eyebrow" data-i18n="eyebrow">YOUR TOKYO JOURNEY</div>
-      <h1 id="page-title">Tokyo itinerary <span aria-hidden="true">🗼</span></h1>
-      <p class="date-line" data-i18n="dateLine">10–14 ตุลาคม 2026 · โตเกียว</p>
-      <p class="intro" data-i18n="intro">รวมเอกสารสำคัญสำหรับทริปนี้<br>เลือกเปิดหัวข้อที่ต้องการได้เลย</p>
+      <h1 id="page-title">Discover Tokyo 7 Days <span aria-hidden="true">🗼</span></h1>
+    <p class="date-line" data-i18n="dateLine">26 กันยายน – 2 ตุลาคม 2026 · โตเกียว</p>
     </section>
     <section aria-label="เอกสารทริป" data-i18n-aria="documentsLabel">
       <nav class="links" aria-label="เอกสารทริป" data-i18n-aria="documentsLabel">
         <a class="link-card itinerary" href="trip/index.html">
           <span class="link-icon" aria-hidden="true">🗓️</span>
-          <span class="link-text"><span class="link-title" data-i18n="tripTitle">ข้อมูลเที่ยว</span><span class="link-detail" data-i18n="tripDetail">แผนเที่ยวรายวัน · เวลา ย่าน และกิจกรรมทั้งหมด</span></span>
+          <span class="link-text"><span class="link-title" data-i18n="tripTitle">ข้อมูลเที่ยว</span><span class="link-detail" data-i18n="tripDetail">แผนเที่ยวรายวัน และกิจกรรมทั้งหมด</span></span>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="link-card" href="travel/index.html">
+          <span class="link-icon" aria-hidden="true">🧳</span>
+          <span class="link-text"><span class="link-title">ข้อมูลการเดินทาง</span><span class="link-detail">เอกสารเส้นทางและรายละเอียดการเดินทาง แบ่งตามวัน</span></span>
           <span class="arrow" aria-hidden="true">↗</span>
         </a>
         <a class="link-card" href="restaurant/index.html">
           <span class="link-icon" aria-hidden="true">🍣</span>
-          <span class="link-text"><span class="link-title" data-i18n="restaurantTitle">รายการร้านอาหาร</span><span class="link-detail" data-i18n="restaurantDetail">รวม 7 ร้าน · แบ่งตามวันเดินทาง</span></span>
+          <span class="link-text"><span class="link-title" data-i18n="restaurantTitle">รายการร้านอาหาร</span><span class="link-detail" data-i18n="restaurantDetail">รวม 19 ร้าน · แบ่งตาม Day 1–6</span></span>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="link-card" href="reservation/index.html">
+          <span class="link-icon" aria-hidden="true">🍽️</span>
+          <span class="link-text"><span class="link-title">เอกสารการจองร้านอาหาร</span><span class="link-detail">รวมภาพยืนยันการจอง เรียงตามวัน เวลา และชื่อร้าน</span></span>
           <span class="arrow" aria-hidden="true">↗</span>
         </a>
         <a class="link-card" href="tricks/index.html">
           <span class="link-icon" aria-hidden="true">📝</span>
           <span class="link-text"><span class="link-title" data-i18n="notesTitle">Trick &amp; Information</span><span class="link-detail" data-i18n="notesDetail">10 ข้อควรรู้เรื่องการสั่งอาหารและมารยาทในร้านญี่ปุ่น</span></span>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="link-card" href="places/index.html">
+          <span class="link-icon" aria-hidden="true">🍵</span>
+          <span class="link-text"><span class="link-title">พิกัดสถานที่</span><span class="link-detail">รวมพิกัดร้านชาและสถานที่ ที่ลูกค้าต้องการ</span></span>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="link-card" href="personal-note/index.html">
+          <span class="link-icon" aria-hidden="true">🛍️</span>
+          <span class="link-text"><span class="link-title">Personalized Note</span><span class="link-detail">ข้อมูลส่วนตัวที่จัดเตรียมตามความต้องการของลูกค้า</span></span>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="link-card" href="immigration/index.html">
+          <span class="link-icon" aria-hidden="true">🛂</span>
+          <span class="link-text"><span class="link-title">เอกสารสำหรับ ตม. ภาษาอังกฤษ</span><span class="link-detail">เอกสารสรุปการเดินทาง เพื่อใช้สำหรับตอบหรือโชว์ให้ ตม. ญี่ปุ่น</span></span>
           <span class="arrow" aria-hidden="true">↗</span>
         </a>
         <a class="link-card" href="https://drive.google.com/drive/folders/1QcAoA7Yp6FG-sno5cIM4A73KjdU4VvbF?usp=sharing" target="_blank" rel="noopener noreferrer">
@@ -200,9 +225,9 @@
     const languageText = {
       th: {
         languageLabel: 'เลือกภาษา', eyebrow: 'YOUR TOKYO JOURNEY',
-        dateLine: '10–14 ตุลาคม 2026 · โตเกียว', intro: 'รวมเอกสารสำคัญสำหรับทริปนี้<br>เลือกเปิดหัวข้อที่ต้องการได้เลย',
-        documentsLabel: 'เอกสารทริปนี้', tripTitle: 'ข้อมูลเที่ยว', tripDetail: 'แผนเที่ยวรายวัน · เวลา ย่าน และกิจกรรมทั้งหมด', restaurantTitle: 'รายการร้านอาหาร',
-        restaurantDetail: 'รวม 7 ร้าน · แบ่งตามวันเดินทาง', notesTitle: 'Trick & Information',
+        dateLine: '26 กันยายน – 2 ตุลาคม 2026 · โตเกียว', intro: 'รวมเอกสารสำคัญสำหรับทริปนี้<br>เลือกเปิดหัวข้อที่ต้องการได้เลย',
+        documentsLabel: 'เอกสารทริปนี้', tripTitle: 'ข้อมูลเที่ยว', tripDetail: 'แผนเที่ยวรายวัน และกิจกรรมทั้งหมด', restaurantTitle: 'รายการร้านอาหาร',
+        restaurantDetail: 'รวม 19 ร้าน · แบ่งตาม Day 1–6', notesTitle: 'Trick & Information',
         notesDetail: '10 ข้อควรรู้เรื่องการสั่งอาหารและมารยาทในร้านญี่ปุ่น', downloadTitle: 'Google Drive',
         downloadDetail: 'สำหรับดาวน์โหลดเอกสารเก็บไว้ หากลูกค้าต้องการ', footer: 'วางแผนทริปได้ง่ายขึ้นในที่เดียว', remark: 'เว็บไซต์นี้จะถูกลบและเข้าถึงไม่ได้หลังทริปจบ<br>หากต้องการเอกสาร กรุณาติดต่ออันย่าได้ทุกช่องทาง'
       },

@@ -33,7 +33,7 @@
       ]},
       {id:4,kicker:'Day 4',date:'16 พฤศจิกายน 2026',title:'Free Day Tokyo',entries:[
         {title:'08:00 - อาหารเช้าที่โรงแรม'},
-        {title:'09:00 - เดินทางเข้าเมือง',links:[['ดูวิธีเดินทางเข้าเมือง','../travel-info/index.html']]},
+        {title:'09:00 - เดินทางเข้าเมือง',links:[['ดูวิธีเดินทางเข้าเมือง','../travel-info/index.html#city-transfer']]},
         {title:'10:00 - ตลาดปลา Tsukiji',text:['กินปลาดิบ ไข่ม้วน ซื้อวัตถุดิบ และปลาแห้ง']},
         {title:'11:00 - Lunch: Yakiuo Ishikawa Tsukiji Honten',restaurantId:'yakiuo-ishikawa',restaurantName:'Yakiuo Ishikawa Tsukiji Honten',text:['ร้านปลาดิบที่กำลังได้รับความนิยม ใช้แนวคิดแบบร้านเนื้อย่าง แต่เปลี่ยนเป็นปลา'],images:['customer-free-day-tsukiji.png']},
         {title:'ตัวเลือก: Sushizanmai Main Store',restaurantId:'sushizanmai-main-store',restaurantName:'Sushizanmai Main Store',text:['หากไม่อยากต่อคิวนาน ร้านซูชิแบบสาขาที่สะดวกสำหรับลูกค้าต่างชาติ มีเมนูภาษาอังกฤษและซูชิที่ทานง่าย'],images:['customer-free-day-sushizanmai.png']},
@@ -46,7 +46,7 @@
         {title:'Mikan Club',text:['ร้านบ้านไม้เก่า เสิร์ฟขนมหวาน เช่น พาร์เฟต์ ดังโงะย่างเอง และโมจิหยดน้ำ'],links:[['เปิด Google Maps','https://maps.app.goo.gl/hv9JYE9TKr1B65BS6']],images:['customer-free-day-mikan-dango.png']},
         {title:'19:00 - Shabu yamawarau Omotesando',restaurantId:'yamawarau-omotesando',restaurantName:'Shabu yamawarau Omotesando',text:['ชาบูหม้อทองแดงแบบหม้อเดี่ยว รีฟิลได้ทุกอย่างยกเว้นเนื้อ มีหมูอย่างดี และคอร์สรวมทั้งออเดิร์ฟกับของหวาน'],images:['customer-free-day-yamawarau.png']},
         {title:'ตัวเลือก: Shabuzen Shibuya',restaurantId:'shabuzen-shibuya',restaurantName:'Shabuzen Shibuya',text:['ชาบูหรือสุกี้บุฟเฟต์ เด่นเรื่องเนื้อ แต่มีหมูและตัวเลือกซีฟู้ดด้วย'],images:['customer-free-day-shabuzen.png']},
-        {title:'20:00 - กลับโรงแรม พักผ่อน',links:[['ดูวิธีเดินทางกลับโรงแรม','../travel-info/index.html']]}
+        {title:'20:00 - กลับโรงแรม พักผ่อน',links:[['ดูวิธีเดินทางกลับโรงแรม','../travel-info/index.html#return-hotel']]}
       ]}
     ];
     const quick=document.querySelector('.quick');quick.innerHTML=days.map(day=>`<a href="#day-${day.id}">${day.kicker}</a>`).join('');

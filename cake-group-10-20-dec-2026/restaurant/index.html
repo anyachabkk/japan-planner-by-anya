@@ -45,3 +45,33 @@ const day7=document.querySelector('#day-7 .grid');
 if(day7&&!document.querySelector('#restaurant-marako-thai-karaoke')){const card=document.createElement('article');card.className='card';card.id='restaurant-marako-thai-karaoke';card.dataset.search='7 16 December 2026 ร้านอาหารมะละกอ Marako Thai Karaoke อาหารไทย คาราโอเกะ';card.innerHTML=`<div class="photos"><img src="${restaurantDocRoot}image26.png" alt="ร้านอาหารมะละกอ Marako Thai Karaoke ภาพที่ 1" loading="lazy"><img src="${restaurantDocRoot}image18.png" alt="ร้านอาหารมะละกอ Marako Thai Karaoke ภาพที่ 2" loading="lazy"></div><div class="content"><h3 class="name">ร้านอาหารมะละกอ Marako Thai Karaoke</h3><div class="rating-row"><span class="rating"><span class="star">★</span> Google Maps <b>4.9</b></span><span class="rating"><span class="star">★</span> Tabelog <b>3.10</b></span></div><p class="desc">ร้านอาหารไทยใน Shinjuku Kabukicho เจ้าของเดียวกับ Bangkok77 ทำอาหารไทยหลากหลายและสามารถร้องคาราโอเกะได้ไม่อั้น</p><div class="note"><strong>เมนูแนะนำ</strong> · อาหารไทย · คาราโอเกะ</div><div class="links"><a href="https://maps.app.goo.gl/p2vwVGQsPJr7x28p6" target="_blank" rel="noreferrer">Google Maps ↗</a><a href="https://tabelog.com/tokyo/A1304/A130401/13042175/" target="_blank" rel="noreferrer">Tabelog ↗</a></div></div>`;const torimero=day7.querySelector('#restaurant-torimero-shinjuku-godzilla-road');if(torimero)torimero.insertAdjacentElement('afterend',card);else day7.append(card)}
 const restaurantSearchInput=document.querySelector('#q');const restaurantSearchCards=[...document.querySelectorAll('.card')];restaurantSearchInput.oninput=()=>{let n=0,x=restaurantSearchInput.value.toLowerCase();restaurantSearchCards.forEach(c=>{const ok=!x||c.dataset.search.toLowerCase().includes(x);c.hidden=!ok;if(ok)n++});document.querySelectorAll('.day').forEach(s=>s.hidden=!s.querySelector('.card:not([hidden])'));document.querySelector('#empty').style.display=n?'none':'block'};
 </script></body></html>
+<script>
+(() => {
+  const style = document.createElement('style');
+  style.textContent = '.photos{position:relative}.photos::after{content:"แตะเพื่อดูภาพใหญ่";position:absolute;right:10px;bottom:10px;z-index:3;padding:6px 9px;border:1px solid rgba(255,255,255,.34);border-radius:999px;color:#fff;background:rgba(47,39,61,.78);font-size:11px;line-height:1.2;pointer-events:none}.photos img{cursor:zoom-in}.cake-image-viewer{width:min(94vw,1100px);max-width:94vw;padding:16px;border:0;border-radius:16px;background:#261f31}.cake-image-viewer::backdrop{background:rgba(38,32,49,.95)}.cake-image-viewer img{display:block;width:auto;max-width:100%;max-height:82vh;margin:auto;object-fit:contain}.cake-image-viewer button{display:block;margin:0 0 10px auto;padding:6px 13px;border:1px solid rgba(255,255,255,.35);border-radius:999px;color:#fff;background:rgba(255,255,255,.1);font:inherit;cursor:pointer}.cake-image-viewer p{margin:10px 0 0;color:rgba(255,255,255,.84);text-align:center;font-size:13px}';
+  document.head.appendChild(style);
+  const viewer = document.createElement('dialog');
+  viewer.className = 'cake-image-viewer';
+  viewer.innerHTML = '<button type="button" aria-label="ปิดภาพ">ปิดภาพ ×</button><img alt=""><p></p>';
+  document.body.appendChild(viewer);
+  const viewerImage = viewer.querySelector('img');
+  const viewerCaption = viewer.querySelector('p');
+  const closeViewer = () => viewer.close();
+  viewer.querySelector('button').addEventListener('click', closeViewer);
+  viewer.addEventListener('click', event => { if (event.target === viewer) closeViewer(); });
+  document.querySelectorAll('.photos img').forEach(image => {
+    image.tabIndex = 0;
+    image.setAttribute('role', 'button');
+    const openViewer = () => {
+      viewerImage.src = image.currentSrc || image.src;
+      viewerImage.alt = image.alt;
+      viewerCaption.textContent = image.alt;
+      viewer.showModal();
+    };
+    image.addEventListener('click', openViewer);
+    image.addEventListener('keydown', event => {
+      if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); openViewer(); }
+    });
+  });
+})();
+</script>

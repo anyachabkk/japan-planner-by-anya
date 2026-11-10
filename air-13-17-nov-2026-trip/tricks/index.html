@@ -48,6 +48,7 @@
     .tip p { margin: 0; color: #5f5968; font-size: 13px; line-height: 1.8; }
     .phrase { display: inline-block; margin: 2px 2px 1px 0; padding: 2px 6px; border-radius: 5px; color: var(--purple-ink); background: var(--purple-soft); font-weight: 700; }
     .tip-note { margin-top: 7px !important; padding-top: 7px; border-top: 1px solid var(--line); color: var(--muted) !important; font-size: 10px !important; }
+    .tip a { display: inline-block; margin-top: 8px; padding: 6px 10px; border: 1px solid var(--lavender-mid); border-radius: 999px; color: var(--purple-ink); background: var(--purple-soft); font-size: 11px; font-weight: 700; text-decoration: none; }
     footer { margin-top: 29px; padding: 27px 8px 0; border-top: 1px solid var(--line); color: #8a8391; text-align: center; font-size: 10px; line-height: 1.8; }
     footer strong { display: block; color: var(--purple-ink); font-size: 10px; letter-spacing: .12em; }
     footer .remark { display: block; margin-top: 9px; color: #8f3f4d; font-size: 10px; line-height: 1.7; }
@@ -98,6 +99,14 @@
           <article class="tip"><span class="tip-number">10</span><div><h3 data-i18n="tip10Title">อาหารเหลือและการห่อกลับ</h3><p data-i18n="tip10">ร้านอาหารญี่ปุ่นโดยทั่วไปอาจไม่มีบริการห่ออาหารที่ทานไม่หมดกลับบ้าน</p></div></article>
         </div>
       </section>
+      <section aria-labelledby="tax-refund-title">
+        <h2 class="section-title" id="tax-refund-title" data-i18n="taxRefundTitle">Tax Refund / Tax-Free Shopping</h2>
+        <div class="tips">
+          <article class="tip"><span class="tip-number">11</span><div><h3 data-i18n="taxRefundTip1Title">ตอนซื้อสินค้า Tax-Free</h3><p data-i18n="taxRefundTip1">เลือกร้านที่มีป้าย Tax-Free และแสดงพาสปอร์ตตอนซื้อ เก็บสินค้าและหลักฐานการซื้อไว้เพื่อแสดงต่อศุลกากรตอนออกจากญี่ปุ่น</p></div></article>
+          <article class="tip"><span class="tip-number">12</span><div><h3 data-i18n="taxRefundTip2Title">ระบบใหม่สำหรับทริปนี้</h3><p data-i18n="taxRefundTip2">ตั้งแต่ 1 พฤศจิกายน 2026 จะจ่ายราคาที่รวมภาษีก่อน จากนั้นให้ศุลกากรยืนยันก่อนออกจากญี่ปุ่นภายใน 90 วันนับจากวันที่ซื้อ แล้วร้านค้าจะคืนเงินภาษีผ่านช่องทางที่ลงทะเบียนไว้</p><p class="tip-note" data-i18n="taxRefundTip2Note">การคืนเงินขึ้นอยู่กับเงื่อนไขและวิธีคืนเงินของร้านค้า ควรสอบถามร้านทุกครั้ง</p></div></article>
+          <article class="tip"><span class="tip-number">13</span><div><h3 data-i18n="taxRefundTip3Title">ก่อนเช็กอินกระเป๋าและก่อนขึ้นเครื่อง</h3><p data-i18n="taxRefundTip3">ต้องนำสินค้าที่ซื้อแบบ Tax-Free ออกนอกญี่ปุ่น ห้ามใช้หรือโอนให้ผู้อื่นในญี่ปุ่น หากใส่ไว้ในกระเป๋าโหลด ให้ติดต่อศุลกากรก่อนเช็กอินกระเป๋า และทำขั้นตอนที่สนามบินหรือท่าเรือที่ออกจากญี่ปุ่นครั้งสุดท้าย</p><a href="https://www.customs.go.jp/kaigairyoko/taxrefund/C-details.html" target="_blank" rel="noopener noreferrer" data-i18n="taxRefundLink">อ่านขั้นตอนจาก Japan Customs ↗</a></div></article>
+        </div>
+      </section>
     </main>
     <footer><strong>JAPAN PLANNER BY ANYA</strong><span>วางแผนทริปได้ง่ายขึ้นในที่เดียว</span><span class="remark">เว็บไซต์นี้จะถูกลบและเข้าถึงไม่ได้หลังทริปจบ<br>หากต้องการเอกสาร กรุณาติดต่ออันย่าได้ทุกช่องทาง</span><nav class="social-links" aria-label="ช่องทางติดต่อ"><a class="social-link" href="https://www.facebook.com/jpplanneranya" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><span>f</span></a><a class="social-link line" href="https://line.me/ti/p/5juCYxEUjk" target="_blank" rel="noopener noreferrer" aria-label="LINE"><span>LINE</span></a><a class="social-link" href="https://www.instagram.com/jp.planner.anya/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><span>◎</span></a><a class="social-link" href="https://www.tiktok.com/@planner.anya" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><span>♪</span></a></nav></footer>
   </div>
@@ -105,7 +114,7 @@
     const translations = {
       th: {
         languageLabel: 'เลือกภาษา', backToIndex: 'กลับหน้า Tokyo itinerary', eyebrow: 'JAPAN DINING GUIDE',
-        pageTitle: 'Trick & Information 🍽️', heroCopy: '10 ข้อควรรู้สำหรับการสั่งอาหารและใช้บริการร้านอาหารในญี่ปุ่น',
+        pageTitle: 'Trick & Information 🍽️', heroCopy: 'ข้อควรรู้สำหรับการสั่งอาหาร ใช้บริการร้านอาหาร และขอ Tax Refund ในญี่ปุ่น',
         orderingTitle: 'การจอง การสั่งอาหาร และการเรียกพนักงาน', restaurantTitle: 'การคิดเงินและข้อควรรู้ในร้าน',
         tip1Title: 'แจ้งจำนวนผู้ใหญ่ 2 คน', tip1: 'บอกพนักงานว่า <span class="phrase">Ni-mei desu</span> พร้อมชูนิ้ว 2 นิ้ว',
         tip2Title: 'กรณีจองร้านไว้', tip2: 'ยื่นใบจองให้พนักงานเมื่อไปถึงร้าน',
@@ -118,11 +127,17 @@
         tip8Title: 'ค่าใช้จ่ายเพิ่มเติมในร้านกินดื่ม', tip8: 'ร้านอิซากายะอาจมีค่าบริการหรือค่าโต๊ะ เช่น ผ้าเย็นและอาหารเรียกน้ำย่อย <span class="phrase">Otoshi</span> ซึ่งเรียกเก็บตามธรรมเนียมของร้าน',
         tip9Title: 'หลีกเลี่ยงช่วงคนเยอะ', tip9: 'ถ้าไม่อยากรอคิวนาน ลองเลี่ยงช่วง Peak hour เช่น 18:00–19:00 น.',
         tip10Title: 'อาหารเหลือและการห่อกลับ', tip10: 'ร้านอาหารญี่ปุ่นโดยทั่วไปอาจไม่มีบริการห่ออาหารที่ทานไม่หมดกลับบ้าน',
+        taxRefundTitle: 'Tax Refund / Tax-Free Shopping',
+        taxRefundTip1Title: 'ตอนซื้อสินค้า Tax-Free', taxRefundTip1: 'เลือกร้านที่มีป้าย Tax-Free และแสดงพาสปอร์ตตอนซื้อ เก็บสินค้าและหลักฐานการซื้อไว้เพื่อแสดงต่อศุลกากรตอนออกจากญี่ปุ่น',
+        taxRefundTip2Title: 'ระบบใหม่สำหรับทริปนี้', taxRefundTip2: 'ตั้งแต่ 1 พฤศจิกายน 2026 จะจ่ายราคาที่รวมภาษีก่อน จากนั้นให้ศุลกากรยืนยันก่อนออกจากญี่ปุ่นภายใน 90 วันนับจากวันที่ซื้อ แล้วร้านค้าจะคืนเงินภาษีผ่านช่องทางที่ลงทะเบียนไว้',
+        taxRefundTip2Note: 'การคืนเงินขึ้นอยู่กับเงื่อนไขและวิธีคืนเงินของร้านค้า ควรสอบถามร้านทุกครั้ง',
+        taxRefundTip3Title: 'ก่อนเช็กอินกระเป๋าและก่อนขึ้นเครื่อง', taxRefundTip3: 'ต้องนำสินค้าที่ซื้อแบบ Tax-Free ออกนอกญี่ปุ่น ห้ามใช้หรือโอนให้ผู้อื่นในญี่ปุ่น หากใส่ไว้ในกระเป๋าโหลด ให้ติดต่อศุลกากรก่อนเช็กอินกระเป๋า และทำขั้นตอนที่สนามบินหรือท่าเรือที่ออกจากญี่ปุ่นครั้งสุดท้าย',
+        taxRefundLink: 'อ่านขั้นตอนจาก Japan Customs ↗',
         footer: 'กลับไปดูเอกสารทริปอื่น ๆ ได้ที่หน้า Tokyo itinerary'
       },
       ja: {
         languageLabel: '言語を選択', backToIndex: 'Tokyo itinerary に戻る', eyebrow: 'JAPAN DINING GUIDE',
-        pageTitle: '食事のヒント＆日本の飲食店情報 🍽️', heroCopy: '日本の飲食店で注文・利用するときに知っておきたい10のポイント',
+        pageTitle: '食事のヒント＆日本の飲食店情報 🍽️', heroCopy: '日本の飲食店での注文・利用と、免税購入について知っておきたいポイント',
         orderingTitle: '予約・注文・スタッフの呼び方', restaurantTitle: '会計とお店での注意点',
         tip1Title: '大人2名と伝える', tip1: 'スタッフに <span class="phrase">二名です (Nimei desu)</span> と伝え、指を2本立てます。',
         tip2Title: '予約している場合', tip2: 'お店に着いたら、予約票をスタッフに見せてください。',
@@ -135,6 +150,12 @@
         tip8Title: '居酒屋の席料など', tip8: '居酒屋では席料やサービス料がかかることがあります。おしぼりや、お通し <span class="phrase">Otoshi</span> が含まれる場合があります。',
         tip9Title: '混雑する時間を避ける', tip9: '長い列を避けたい場合は、18:00〜19:00などのピーク時間を避けるのがおすすめです。',
         tip10Title: '食べ残しの持ち帰り', tip10: '日本の飲食店では、食べ残しを持ち帰るための容器を用意していないことがあります。',
+        taxRefundTitle: '免税購入・Tax Refund',
+        taxRefundTip1Title: '免税店で購入するとき', taxRefundTip1: 'Tax-Freeの表示があるお店で、購入時にパスポートを提示してください。購入品と購入記録は、日本を出国するまで保管します。',
+        taxRefundTip2Title: '今回の旅行に適用される新制度', taxRefundTip2: '2026年11月1日からは、税込価格で購入した後、購入日から90日以内に出国時の税関で持ち出し確認を受けます。その後、登録した方法でお店から消費税相当額が返金されます。',
+        taxRefundTip2Note: '返金方法や手数料などは店舗ごとに異なるため、購入時に確認してください。',
+        taxRefundTip3Title: '預け入れ荷物と出国前の手続き', taxRefundTip3: '免税品は日本から持ち出す必要があります。日本国内で使用・譲渡しないでください。預け入れ荷物に入れる場合は、チェックイン前に税関で確認を受け、最終出国空港または港で手続きを行います。',
+        taxRefundLink: 'Japan Customsの手続き ↗',
         footer: 'Tokyo itinerary のトップページから他の資料をご覧いただけます。'
       }
     };
